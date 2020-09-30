@@ -12,6 +12,7 @@ sudo mount /dev/cdrom /mnt/cdrom
 sleep 5
 tar xf /mnt/cdrom/VMwareTools*.tar.gz -C ~/
 sudo perl ~/vmware-tools-distrib/vmware-install.pl
+sleep 5
 sudo umount /dev/cdrom
 
 ##Creamos el servicio y lo activamos para que se ejecute al inicio
@@ -37,7 +38,7 @@ fi
 sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared/ -o allow_other
 
 ## Activamos copiar y pegar entre sistemas
-echo "run vmware-user &" >> ~/.config/bspwm/autostart.sh ### Para que se ejecute siempre al iniciar
+#echo "run vmware-user &" >> ~/.config/bspwm/autostart.sh ### Para que se ejecute siempre al iniciar
 vmware-user
 
 echo "Realiza un reboot"

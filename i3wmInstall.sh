@@ -152,7 +152,7 @@ sudo pacman -S --noconfirm --needed git                     # CLI del software d
 #sudo pacman -S --noconfirm --needed glances                # Herramienta de monitorización del sistema por CLI
 sudo pacman -S --noconfirm --needed gparted                 # is a free partition editor for graphically managing your disk partitions
 #sudo pacman -S --noconfirm --needed grsync                 # rsync es una herramienta diferencial de copia de seguridad y sincronización de archivos
-sudo pacman -S --noconfirm --needed gvfs gvfs-mtp           # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME
+sudo pacman -S --noconfirm --needed gvfs gvfs-mtp           # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME para detectar dispositivos extraibles.
 #sudo pacman -S --noconfirm --needed hardinfo               # is a system profiler and benchmark for Linux systems
 sudo pacman -S --noconfirm --needed hddtemp                 # is a small utility (with daemon) that gives the hard-drive temperature
 sudo pacman -S --noconfirm --needed htop                    # es un sistema de monitorización, administración y visor de procesos interactivo

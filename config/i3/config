@@ -426,5 +426,6 @@ exec --no-startup-id unclutter &
 exec --no-startup-id redshift &
 exec --no-startup-id nm-applet &
 exec --no-startup-id cbatticon &
+
 #Set keyboard layout to colemak
-exec --no-startup-id setxkbmap us -variant colemak
+#exec --no-startup-id setxkbmap us -variant colemak

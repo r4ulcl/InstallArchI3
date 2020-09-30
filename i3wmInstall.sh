@@ -121,12 +121,13 @@ sudo pacman -S --noconfirm --needed chromium
 sudo pacman -S --noconfirm --needed firefox
 #sudo pacman -S --noconfirm --needed qbittorrent
 #sudo pacman -S --noconfirm --needed lynx                   # Lynx es un navegador web y cliente de gopher en modo texto
-sudo pacman -S --noconfirm --needed tor torsocks
+sudo pacman -S --noconfirm --needed tor 
+sudo pacman -S --noconfirm --needed torsocks
 sudo pacman -S --noconfirm --needed torbrowser-launcher
-#sudo pacman -S --noconfirm --needed nyx
-#sudo pacman -S --noconfirm --needed thunderbird
+#sudo pacman -S --noconfirm --needed nyx                    # Nyx is a command-line monitor for Tor. With this you can get detailed real-time information about your relay such as bandwidth usage, connections, logs, and much more.
+#sudo pacman -S --noconfirm --needed thunderbird            # Gestor de correo
 #sudo pacman -S --noconfirm --needed pidgin                 # For social media
-#sudo pacman -S --noconfirm --needed w3m                     # W3m es un navegador web basado en texto así como un paginador. Se parece mucho a Lynx
+#sudo pacman -S --noconfirm --needed w3m                    # W3m es un navegador web basado en texto así como un paginador. Se parece mucho a Lynx
 
 echo "Installing category Multimedia"
 

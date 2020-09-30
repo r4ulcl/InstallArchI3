@@ -112,20 +112,21 @@ sudo pacman -S --noconfirm --needed python-pip python2-pip
 
 echo "Installing category Graphics"
 
-sudo pacman -S --noconfirm --needed gimp                      # GIMP es un programa de edición de imágenes digitales en forma de mapa de bits, tanto dibujos como fotografías
-sudo pacman -S --noconfirm --needed eog                       # is the GNOME image viewer
+sudo pacman -S --noconfirm --needed gimp                     # GIMP es un programa de edición de imágenes digitales en forma de mapa de bits, tanto dibujos como fotografías
+sudo pacman -S --noconfirm --needed eog                      # is the GNOME image viewer
 
 echo "Installing category Internet"
 
 sudo pacman -S --noconfirm --needed chromium
 sudo pacman -S --noconfirm --needed firefox
 #sudo pacman -S --noconfirm --needed qbittorrent
-#sudo pacman -S --noconfirm --needed lynx
+#sudo pacman -S --noconfirm --needed lynx                   # Lynx es un navegador web y cliente de gopher en modo texto
 sudo pacman -S --noconfirm --needed tor torsocks
 sudo pacman -S --noconfirm --needed torbrowser-launcher
 #sudo pacman -S --noconfirm --needed nyx
 #sudo pacman -S --noconfirm --needed thunderbird
-#sudo pacman -S --noconfirm --needed pidgin # For social media
+#sudo pacman -S --noconfirm --needed pidgin                 # For social media
+#sudo pacman -S --noconfirm --needed w3m                     # W3m es un navegador web basado en texto así como un paginador. Se parece mucho a Lynx
 
 echo "Installing category Multimedia"
 
@@ -247,8 +248,8 @@ echo "Setting Display Manager"
 
 
 sudo pacman -S --noconfirm --needed i3-gaps                     # i3-gaps is a fork of i3wm, a tiling window manager for X11
-sudo pacman -S --noconfirm --needed i3blocks
-yay -S --noconfirm --needed ly-git
+sudo pacman -S --noconfirm --needed i3blocks                    # Define bloques para la barra de estado de i3bar
+yay -S --noconfirm --needed ly-git                              # Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
 
@@ -268,17 +269,15 @@ sudo pacman -S xfce4-terminal --noconfirm --needed
 
 echo "Installing category System"
 
-sudo pacman -S arandr --noconfirm --needed
-sudo pacman -S awesome-terminal-fonts --noconfirm --needed
-sudo pacman -S picom  --noconfirm --needed
-sudo pacman -S dmenu  --noconfirm --needed
-sudo pacman -S feh --noconfirm --needed
-sudo pacman -S gtop --noconfirm --needed
-sudo pacman -S imagemagick --noconfirm --needed
-sudo pacman -S lxappearance-gtk3 --noconfirm --needed
-sudo pacman -S lxrandr --noconfirm --needed
-sudo pacman -S playerctl --noconfirm --needed
-sudo pacman -S w3m  --noconfirm --needed
+sudo pacman -S arandr --noconfirm --needed                      # arandr para la configuración de la resolución de video                     
+sudo pacman -S picom  --noconfirm --needed                      # Para la transparencia de la shell
+sudo pacman -S dmenu  --noconfirm --needed                      # Para ejecutar o lanzar programas
+sudo pacman -S feh --noconfirm --needed                         # feh es un visor de imágenes ligero dirigido principalmente a usuarios de interfaces de línea de comandos
+sudo pacman -S gtop --noconfirm --needed                        # Programa de monitorización del sistema por la terminal
+sudo pacman -S imagemagick --noconfirm --needed                 # ImageMagick es un conjunto de utilidades de código abierto para mostrar, manipular y convertir imágenes, capaz de leer y escribir más de 200 formatos
+sudo pacman -S lxappearance-gtk3 --noconfirm --needed           # Theme switcher
+sudo pacman -S lxrandr --noconfirm --needed                     # LXRandR is the standard screen manager of LXDE
+sudo pacman -S playerctl --noconfirm --needed                   # Playerctl es una utilidad de línea de comandos y biblioteca para controlar reproductores multimedia que implementan la especificación de interfaz MPRIS D-Bus
 sudo pacman -S xfce4-appfinder --noconfirm --needed
 sudo pacman -S xfce4-power-manager --noconfirm --needed
 sudo pacman -S xfce4-settings --noconfirm --needed
@@ -320,6 +319,7 @@ sudo pacman -S ttf-ubuntu-font-family --noconfirm --needed              # Famili
 sudo pacman -S tamsyn-font --noconfirm --needed
 sudo pacman -S breeze --noconfirm --needed
 sudo pacman -S otf-hermit --noconfirm --needed          
+sudo pacman -S awesome-terminal-fonts --noconfirm --needed
 
 echo ""
 

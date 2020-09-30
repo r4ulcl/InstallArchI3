@@ -455,9 +455,3 @@ sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un pro
 sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
 sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman
-
-## Crackmapexec ##
-git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec /opt/
-cd /opt/CrackMapExec
-python3 setup.py install
-cd ~

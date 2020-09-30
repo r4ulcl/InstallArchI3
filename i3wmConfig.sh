@@ -17,11 +17,6 @@ then
     mkdir -p ~/.vim/bundle
 fi
 
-if [ ! -d "/etc/pacman.d/hooks" ]
-then
-    sudo mkdir -p /etc/pacman.d/hooks
-fi
-
 echo "Copying Files to HOME ..."
 
 cp .bashrc ~/.
@@ -61,11 +56,12 @@ chmod +x ~/.config/i3blocks/blocks/*
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-sleep 1
+sleep 5
 
 echo "Setting some configuration..."
 sudo updatedb # Update mlocate db
 sudo localectl set-x11-keymap es # Set the keyboard map
+
 # sudo localectl set-x11-keymap colemak
 
 # Config pacman
@@ -90,7 +86,7 @@ sudo localectl set-x11-keymap es # Set the keyboard map
 
 #sleep 1
 
-echo "Installing tools with archstrike"
+#echo "Installing tools with archstrike"
 #sudo pacman -S --noconfirm --needed wfuzz dirbuster
 #sudo pacman -S --noconfirm --needed burpsuite
 #sudo pacman -S --noconfirm --needed crunch cupp-git cewl

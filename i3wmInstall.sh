@@ -107,8 +107,13 @@ sudo pacman -S --noconfirm --needed flameshot                 # For screenshoots
 echo "Installing category Development"
 
 sudo pacman -S --noconfirm --needed vim
-sudo pacman -S --noconfirm --needed python python2
-sudo pacman -S --noconfirm --needed python-pip python2-pip
+sudo pacman -S --noconfirm --needed python 
+sudo pacman -S --noconfirm --needed python2
+sudo pacman -S --noconfirm --needed python-pip 
+sudo pacman -S --noconfirm --needed python2-pip
+sudo pip2 install -U pip                                       # Actualizar pip2
+sudo pip install -U pip                                        # Actualizar pip3
+sudo pip3 install cve_searchsploit                             # Instalamos searchsploit_cve
 
 echo "Installing category Graphics"
 
@@ -384,7 +389,7 @@ echo ""
 
 
 # ----------------
-# Personal Configuration
+# Personal Configuration Jaime
 # ----------------
 
 sudo pacman -S --noconfirm --needed telegram-desktop
@@ -401,3 +406,13 @@ sudo pacman -S --noconfirm --needed gnupg               # GnuPG permite cifrar y
 # Eyes
 sudo pacman -S --noconfirm --needed redshift            # Ajusta la temperatura del color de tu pantalla
 
+
+# Custom Loop-Man
+
+sudo pacman -S --noconfirm --needed code        # Para programar con visual-studio-code
+sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpetas
+sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un programa
+sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
+sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
+sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
+sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman

@@ -66,7 +66,7 @@ echo "Setting Network Discovery"
 
 sudo pacman -S --noconfirm --needed wget curl
 sudo pacman -S --noconfirm --needed network-manager-applet
-sudo pacman -S --noconfirm --needed avahi
+sudo pacman -S --noconfirm --needed avahi                       #Avahi es un entorno totalmente LGPL para el descubrimiento de servicios de DNS multicast
 sudo systemctl enable avahi-daemon.service
 sudo systemctl start avahi-daemon.service
 
@@ -101,8 +101,8 @@ echo ""
 # Core, Extra, Community, Multilib repositories
 echo "Installing category Accessories"
 
-sudo pacman -S --noconfirm --needed cronie # For cronjobs
-sudo pacman -S --noconfirm --needed flameshot # For screenshoots
+sudo pacman -S --noconfirm --needed cronie                    # For cronjobs
+sudo pacman -S --noconfirm --needed flameshot                 # For screenshoots
 
 echo "Installing category Development"
 
@@ -112,85 +112,82 @@ sudo pacman -S --noconfirm --needed python-pip python2-pip
 
 echo "Installing category Graphics"
 
-sudo pacman -S --noconfirm --needed gimp
-sudo pacman -S --noconfirm --needed eog
+sudo pacman -S --noconfirm --needed gimp                      # GIMP es un programa de edición de imágenes digitales en forma de mapa de bits, tanto dibujos como fotografías
+sudo pacman -S --noconfirm --needed eog                       # is the GNOME image viewer
 
 echo "Installing category Internet"
 
 sudo pacman -S --noconfirm --needed chromium
 sudo pacman -S --noconfirm --needed firefox
-sudo pacman -S --noconfirm --needed qbittorrent
-sudo pacman -S --noconfirm --needed lynx
+#sudo pacman -S --noconfirm --needed qbittorrent
+#sudo pacman -S --noconfirm --needed lynx
 sudo pacman -S --noconfirm --needed tor torsocks
 sudo pacman -S --noconfirm --needed torbrowser-launcher
-sudo pacman -S --noconfirm --needed nyx
-sudo pacman -S --noconfirm --needed thunderbird
-sudo pacman -S --noconfirm --needed pidgin # For social media
+#sudo pacman -S --noconfirm --needed nyx
+#sudo pacman -S --noconfirm --needed thunderbird
+#sudo pacman -S --noconfirm --needed pidgin # For social media
 
 echo "Installing category Multimedia"
 
-sudo pacman -S --noconfirm --needed simplescreenrecorder
-sudo pacman -S --noconfirm --needed vlc
-sudo pacman -S --noconfirm --needed youtube-dl
+sudo pacman -S --noconfirm --needed simplescreenrecorder    #Grabador de pantalla con muchas funcionalidades
+sudo pacman -S --noconfirm --needed vlc                     #Reproductor de video
+sudo pacman -S --noconfirm --needed youtube-dl              #Programa para descargar videos de youtube.
 
 echo "Installing category Office"
 
-sudo pacman -S --noconfirm --needed evince
-sudo pacman -S --noconfirm --needed libreoffice-fresh
+sudo pacman -S --noconfirm --needed evince                  # Visor de pdf
+sudo pacman -S --noconfirm --needed libreoffice-fresh       # Libreoffice
 
 echo "Installing category System"
 
-sudo pacman -S --noconfirm --needed accountsservice
-sudo pacman -S --noconfirm --needed git
-sudo pacman -S --noconfirm --needed glances
-sudo pacman -S --noconfirm --needed gparted
-sudo pacman -S --noconfirm --needed grsync
-sudo pacman -S --noconfirm --needed gvfs gvfs-mtp
-sudo pacman -S --noconfirm --needed hardinfo
-sudo pacman -S --noconfirm --needed hddtemp
-sudo pacman -S --noconfirm --needed htop
-sudo pacman -S --noconfirm --needed lsb-release
-sudo pacman -S --noconfirm --needed mlocate
-sudo pacman -S --noconfirm --needed net-tools
-sudo pacman -S --noconfirm --needed noto-fonts
-sudo pacman -S --noconfirm --needed numlockx
-sudo pacman -S --noconfirm --needed neofetch
-sudo pacman -S --noconfirm --needed tmux
-sudo pacman -S --noconfirm --needed termite
-sudo pacman -S --noconfirm --needed thunar
+sudo pacman -S --noconfirm --needed accountsservice         # Interfaz para las consultas y manipulación de cuentas de usuario del sistema
+sudo pacman -S --noconfirm --needed git                     # CLI del software de control de versiones
+#sudo pacman -S --noconfirm --needed glances                # Herramienta de monitorización del sistema por CLI
+sudo pacman -S --noconfirm --needed gparted                 # is a free partition editor for graphically managing your disk partitions
+#sudo pacman -S --noconfirm --needed grsync                 # rsync es una herramienta diferencial de copia de seguridad y sincronización de archivos
+sudo pacman -S --noconfirm --needed gvfs gvfs-mtp           # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME
+#sudo pacman -S --noconfirm --needed hardinfo               # is a system profiler and benchmark for Linux systems
+sudo pacman -S --noconfirm --needed hddtemp                 # is a small utility (with daemon) that gives the hard-drive temperature
+sudo pacman -S --noconfirm --needed htop                    # es un sistema de monitorización, administración y visor de procesos interactivo
+sudo pacman -S --noconfirm --needed lsb-release             # El comando lsb_release nos muestra la información LSB (Linux Standard Base)
+sudo pacman -S --noconfirm --needed mlocate                 # Es una versión más segura de la utilidad locate
+sudo pacman -S --noconfirm --needed net-tools               # Conjunto de herramientas de red
+sudo pacman -S --noconfirm --needed numlockx                # numlockx is a program to control the NumLock key inside X11 session scripts
+sudo pacman -S --noconfirm --needed neofetch                # Neofetch muestra información sobre su sistema junto a una imagen.
+sudo pacman -S --noconfirm --needed tmux                    # Tmux es un multiplexador de terminales
+sudo pacman -S --noconfirm --needed termite                 # Terminal termite para arch. Is a minimal VTE-based terminal emulator. It is a modal application, similar to Vim
+sudo pacman -S --noconfirm --needed thunar                  # Thunar es el gestor de archivos lanzado oficialmente con la versión 4.4 de Xfce
 sudo pacman -S --noconfirm --needed thunar-archive-plugin
 sudo pacman -S --noconfirm --needed thunar-volman
-sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family
-sudo pacman -S --noconfirm --needed ttf-droid
-sudo pacman -S --noconfirm --needed tumbler
-sudo pacman -S --noconfirm --needed virtualbox-host-modules-arch
-sudo pacman -S --noconfirm --needed virtualbox
-sudo pacman -S --noconfirm --needed unclutter
-sudo pacman -S --noconfirm --needed rxvt-unicode
-sudo pacman -S --noconfirm --needed urxvt-perls
-sudo pacman -S --noconfirm --needed xdg-user-dirs
-sudo pacman -S --noconfirm --needed xdo
-sudo pacman -S --noconfirm --needed xdotool
-sudo pacman -S --noconfirm --needed zenity
-sudo pacman -S --noconfirm --needed man
-sudo pacman -S --noconfirm --needed cmake
-sudo pacman -S --noconfirm --needed ranger
-sudo pacman -S --noconfirm --needed reflector
-sudo pacman -S --noconfirm --needed mlocate
-sudo pacman -S --noconfirm --needed dnsutils
-sudo pacman -S --noconfirm --needed xorg-xbacklight
-sudo pacman -S --noconfirm --needed grc
-sudo pacman -S --noconfirm --needed xclip
-sudo pacman -S --noconfirm --needed jq
-sudo pacman -S --noconfirm --needed fish # Fish shell
-sudo pacman -S --noconfirm --needed nfs-utils
-sudo pacman -S --noconfirm --needed tree
-sudo pacman -S --noconfirm --needed remmina
-sudo pacman -S --noconfirm --needed rdesktop
-sudo pacman -S --noconfirm --needed calcurse
-sudo pacman -S --noconfirm --needed sysstat
-sudo pacman -S --noconfirm --needed task
-sudo pacman -S --noconfirm --needed keepassxc
+
+sudo pacman -S --noconfirm --needed tumbler                 # is part of the XFCE standard installation
+sudo pacman -S --noconfirm --needed virtualbox-host-modules-arch # Virtualbox es un software de virtualización para arquitecturas x86/amd64
+sudo pacman -S --noconfirm --needed virtualbox              # Virtualbox es un software de virtualización para arquitecturas x86/amd64
+sudo pacman -S --noconfirm --needed unclutter               # Unclutter hides your X mouse cursor when you do not need it
+#sudo pacman -S --noconfirm --needed rxvt-unicode           # rxvt-unicode es un emulador de terminal altamente configurable derivado de rxvt. Comunmente es conocido como urxvt
+#sudo pacman -S --noconfirm --needed urxvt-perls            # A small collection of perl extensions for the rxvt-unicode terminal emulator
+sudo pacman -S --noconfirm --needed xdg-user-dirs           # xdg-user-dirs is a tool to help manage "well known" user directories like the desktop folder and the music folder
+sudo pacman -S --noconfirm --needed xdo                     # Utilidad para realizar acciones sobre windows
+sudo pacman -S --noconfirm --needed xdotool                 # CLI X11 automation tool
+sudo pacman -S --noconfirm --needed zenity                  # Zenity es un conjunto de cajas de diálogos gráficas que usan las librerías gtk
+sudo pacman -S --noconfirm --needed man                     # Man es una aplicación que proporciona manuales para los comandos utilizados
+sudo pacman -S --noconfirm --needed cmake                   # CMake es una herramienta multiplataforma de generación o automatización de código
+#sudo pacman -S --noconfirm --needed ranger                 # Ranger, un potente administrador de archivos para el terminal
+sudo pacman -S --noconfirm --needed reflector               # Reflector is a Python script which can retrieve the latest mirror list from the Arch Linux    
+sudo pacman -S --noconfirm --needed dnsutils                # Proporciona herramientas para consultas dns
+sudo pacman -S --noconfirm --needed xorg-xbacklight         # Aplicación para controlar la iluminación
+sudo pacman -S --noconfirm --needed grc                     # Comando para darle color a la salida de los comandos
+sudo pacman -S --noconfirm --needed xclip                   # Comando para copiar la salida al portapapeles
+sudo pacman -S --noconfirm --needed jq                      # Comando para parsear json
+#sudo pacman -S --noconfirm --needed fish                   # Fish shell
+sudo pacman -S --noconfirm --needed nfs-utils               # Herramientas para consultas nfs, NFS is a protocol that allows sharing file systems over the network. 
+sudo pacman -S --noconfirm --needed tree                    # Comando para ver directorios en modo arbol
+#sudo pacman -S --noconfirm --needed remmina                # Remmina es un cliente de escritorio remoto para sistemas operativos de computadora basados en POSIX. Es compatible con los protocolos Remote Desktop Protocol, VNC, NX, XDMCP, SPICE y SSH
+sudo pacman -S --noconfirm --needed rdesktop                # Cliente para RDP
+sudo pacman -S --noconfirm --needed calcurse                # calcurse is a calendar and scheduling application for the command line
+#sudo pacman -S --noconfirm --needed sysstat                # sysstat es una colección de herramientas de monitoreo de rendimiento para Linux
+sudo pacman -S --noconfirm --needed task                    # Gestor de tareas
+sudo pacman -S --noconfirm --needed keepassxc               # Gestor de contraseñas
 
 ###############################################################################################
 
@@ -218,26 +215,26 @@ then
 
 echo "Installing category System"
 
-yay -S --noconfirm --needed downgrade
-yay -S --noconfirm --needed font-manager-git
-yay -S --noconfirm --needed inxi
-yay -S --noconfirm --needed oxy-neon
-yay -S --noconfirm --needed pamac-aur
-yay -S --noconfirm --needed sardi-icons
-yay -S --noconfirm --needed sardi-orb-colora-variations-icons-git
-yay -S --noconfirm --needed surfn-icons-git
-yay -S --noconfirm --needed the_platinum_searcher-bin
-yay -S --noconfirm --needed ttf-font-awesome
-yay -S --noconfirm --needed ttf-mac-fonts
-yay -S --noconfirm --needed nerd-fonts-hack 
-yay -S --noconfirm --needed brave-nightly-bin
-yay -S --noconfirm --needed gksu
-yay -S --noconfirm --needed cherrytree
-yay -S --noconfirm --needed remmina-plugin-rdesktop
+yay -S --noconfirm --needed downgrade                                   # Script de bash para degradar uno o más paquetes a una versión en su caché o en A.L.A.
+yay -S --noconfirm --needed font-manager-git                            # FUENTE
+yay -S --noconfirm --needed inxi                                        # Esta es una herramienta de información del equipo para la línea de comandos
+yay -S --noconfirm --needed oxy-neon                                    # Es un tema para crear un escritorio oscuro
+yay -S --noconfirm --needed pamac-aur                                   # PAMAC es una excelente GUI de los chicos de Manjaro para manejar el gestor de paquetes pacman
+yay -S --noconfirm --needed sardi-icons                                 # Conjunto de iconos
+yay -S --noconfirm --needed sardi-orb-colora-variations-icons-git       # Conjunto de iconos
+yay -S --noconfirm --needed surfn-icons-git                             # Conjunto de iconos
+yay -S --noconfirm --needed the_platinum_searcher-bin                   #  A code search tool similar to ack
+yay -S --noconfirm --needed ttf-font-awesome                            # FUENTE
+yay -S --noconfirm --needed ttf-mac-fonts                               # FUENTE
+yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
+#yay -S --noconfirm --needed brave-nightly-bin                          # Navegador web brave
+yay -S --noconfirm --needed gksu                                        # Permite iniciar aplicaciones gráficas desde consola con otro usuario pidiendo sus datos.
+yay -S --noconfirm --needed cherrytree                                  # Programa de notas offline
+#yay -S --noconfirm --needed remmina-plugin-rdesktop                    # Plugin para rdesktop de remina
 
 # these come always last
 
-yay -S --noconfirm --needed hardcode-fixer-git
+yay -S --noconfirm --needed hardcode-fixer-git                          # Este programa pretende ser una solución segura, fácil y estandarizada al problema de los iconos de aplicaciones codificados en Linux. 
 sudo hardcode-fixer
 
 echo "" 
@@ -249,7 +246,8 @@ echo ""
 echo "Setting Display Manager"
 
 
-sudo pacman -S i3-gaps i3blocks --noconfirm --needed
+sudo pacman -S --noconfirm --needed i3-gaps                     # i3-gaps is a fork of i3wm, a tiling window manager for X11
+sudo pacman -S --noconfirm --needed i3blocks
 yay -S --noconfirm --needed ly-git
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
@@ -280,7 +278,6 @@ sudo pacman -S imagemagick --noconfirm --needed
 sudo pacman -S lxappearance-gtk3 --noconfirm --needed
 sudo pacman -S lxrandr --noconfirm --needed
 sudo pacman -S playerctl --noconfirm --needed
-sudo pacman -S thunar --noconfirm --needed
 sudo pacman -S w3m  --noconfirm --needed
 sudo pacman -S xfce4-appfinder --noconfirm --needed
 sudo pacman -S xfce4-power-manager --noconfirm --needed
@@ -298,7 +295,7 @@ echo "AUR - DESKTOP SPECIFIC APPLICATIONS "
 yay -S --noconfirm --needed gtk2-perl
 yay -S --noconfirm --needed perl-linux-desktopfiles
 yay -S --noconfirm --needed xtitle
-yay -S --noconfirm --needed urxvt-resize-font-git
+#yay -S --noconfirm --needed urxvt-resize-font-git
 yay -S --noconfirm --needed i3exit
 
 echo ""
@@ -311,18 +308,18 @@ echo "Installing fonts and themes from Arch Linux repo"
 
 sudo pacman -S adobe-source-sans-pro-fonts --noconfirm --needed
 sudo pacman -S cantarell-fonts --noconfirm --needed
-sudo pacman -S noto-fonts --noconfirm --needed
+sudo pacman -S noto-fonts --noconfirm --needed                          # Familia de fuentes noto, fue desarrollada por google
 sudo pacman -S ttf-bitstream-vera --noconfirm --needed
 sudo pacman -S ttf-dejavu --noconfirm --needed
-sudo pacman -S ttf-droid --noconfirm --needed
+sudo pacman -S ttf-droid --noconfirm --needed                           # Conjunto de fuentes de propósito general liberadas por google como parte de android
 sudo pacman -S ttf-hack --noconfirm --needed
 sudo pacman -S ttf-inconsolata --noconfirm --needed
 sudo pacman -S ttf-liberation --noconfirm --needed
 sudo pacman -S ttf-roboto --noconfirm --needed
-sudo pacman -S ttf-ubuntu-font-family --noconfirm --needed
+sudo pacman -S ttf-ubuntu-font-family --noconfirm --needed              # Familia de fuentes de ubuntu
 sudo pacman -S tamsyn-font --noconfirm --needed
 sudo pacman -S breeze --noconfirm --needed
-sudo pacman -S otf-hermit --noconfirm --needed
+sudo pacman -S otf-hermit --noconfirm --needed          
 
 echo ""
 
@@ -338,13 +335,19 @@ sudo pacman -S --noconfirm --needed aircrack-ng
 sudo pacman -S --noconfirm --needed bettercap
 sudo pacman -S --noconfirm --needed inetutils
 sudo pacman -S --noconfirm --needed openssh
-sudo pacman -S --noconfirm --needed iputils traceroute whois dnsutils
+sudo pacman -S --noconfirm --needed iputils 
+sudo pacman -S --noconfirm --needed traceroute 
+sudo pacman -S --noconfirm --needed whois 
+sudo pacman -S --noconfirm --needed dnsutils
 sudo pacman -S --noconfirm --needed impacket
-sudo pacman -S --noconfirm --needed hydra medusa
-sudo pacman -S --noconfirm --needed john hashcat
+sudo pacman -S --noconfirm --needed hydra 
+sudo pacman -S --noconfirm --needed medusa
+sudo pacman -S --noconfirm --needed john 
+sudo pacman -S --noconfirm --needed hashcat
 sudo pacman -S --noconfirm --needed nikto
 sudo pacman -S --noconfirm --needed sqlmap
-sudo pacman -S --noconfirm --needed wireshark-qt tcpdump
+sudo pacman -S --noconfirm --needed wireshark-qt 
+sudo pacman -S --noconfirm --needed tcpdump
 sudo pacman -S --noconfirm --needed proxychains-ng
 sudo pacman -S --noconfirm --needed dsniff
 sudo pacman -S --noconfirm --needed ettercap-gtk
@@ -352,25 +355,29 @@ sudo pacman -S --noconfirm --needed hping
 sudo pacman -S --noconfirm --needed ngrep
 sudo pacman -S --noconfirm --needed metasploit
 sudo pacman -S --noconfirm --needed masscan
-sudo pacman -S --noconfirm --needed zaproxy
+#sudo pacman -S --noconfirm --needed zaproxy
 sudo pacman -S --noconfirm --needed smbclient
-sudo pacman -S --noconfirm --needed kxmlrpcclient
+sudo pacman -S --noconfirm --needed kxmlrpcclient               # XML-RPC client library for KDE
 sudo pacman -S --noconfirm --needed radare2
 sudo pacman -S --noconfirm --needed parallel
 sudo pacman -S --noconfirm --needed mysql
 sudo pacman -S --noconfirm --needed perl-image-exiftool
+sudo pacman -S --noconfirm --needed wpscan
+
 #For windows
 sudo pacman -S --noconfirm --needed nbtscan
+
 # For Wifi
-sudo pacman -S --noconfirm --needed wpscan
-sudo pacman -S --noconfirm --needed reaver bully
-sudo pacman -S --noconfirm --needed macchanger
-sudo pacman -S --noconfirm --needed hcxdumptool hcxtools
+sudo pacman -S --noconfirm --needed reaver              # Reaver-WPS desempeña un ataque de fuerza bruta contra el número de pin de WiFi de un punto de acceso
+sudo pacman -S --noconfirm --needed bully               # Romper claves WPA por la vulnerabilidad del WPS mediante Bully.
+sudo pacman -S --noconfirm --needed macchanger          # Herramienta para cambiar la mac de la tarjeta de red
+sudo pacman -S --noconfirm --needed hcxdumptool         # Pequeña herramienta para capturar paquetes de dispositivos WLAN
+sudo pacman -S --noconfirm --needed hcxtools            # Un pequeño conjunto de herramientas convierte paquetes de capturas (h = hash, c = captura, convierte y calcula candidatos, x = diferentes tipos de hash) para su uso con el último hashcat o John the Ripper.
 
 # AUR Repo
-yay -S --noconfirm --needed exploit-db-git
-yay -S --noconfirm --needed cutycapt-qt5-git
-yay -S --noconfirm --needed routersploit-git
+yay -S --noconfirm --needed exploit-db-git              # The Exploit Database Git Repository
+yay -S --noconfirm --needed cutycapt-qt5-git            # Una utilidad de línea de comandos basada en Qt y WebKit que captura la representación de WebKit de una página web.
+yay -S --noconfirm --needed routersploit-git            # The RouterSploit Framework is an open-source exploitation framework dedicated to embedded devices.
 
 echo ""
 
@@ -382,14 +389,14 @@ echo ""
 sudo pacman -S --noconfirm --needed telegram-desktop
 
 # Antivirus
-sudo pacman -S --noconfirm --needed clamav
+#sudo pacman -S --noconfirm --needed clamav
 
 # Uncomplicated Firewall
-sudo pacman -S --noconfirm --needed ufw
+#sudo pacman -S --noconfirm --needed ufw
 
 # Criptography
-sudo pacman -S --noconfirm --needed gnupg
+sudo pacman -S --noconfirm --needed gnupg               # GnuPG permite cifrar y firmar tus datos y comunicaciones, incluye un sistema versátil de gestión de claves
 
 # Eyes
-sudo pacman -S --noconfirm --needed redshift
+sudo pacman -S --noconfirm --needed redshift            # Ajusta la temperatura del color de tu pantalla
 

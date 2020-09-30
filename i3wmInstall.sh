@@ -59,6 +59,30 @@ echo "change to have a2dp if needed"
 echo ""
 
 # -----------------
+# Printers
+# -----------------
+
+echo "Setting Printers"
+
+sudo pacman -S --noconfirm --needed cups cups-pdf
+
+#first try if you can print without foomatic
+#sudo pacman -S foomatic-db-engine --noconfirm --needed
+#sudo pacman -S foomatic-db foomatic-db-ppds foomatic-db-nonfree-ppds foomatic-db-gutenprint-ppds --noconfirm --needed
+
+sudo pacman -S ghostscript gsfonts gutenprint --noconfirm --needed
+sudo pacman -S gtk3-print-backends --noconfirm --needed
+sudo pacman -S libcups --noconfirm --needed
+sudo pacman -S hplip --noconfirm --needed
+sudo pacman -S system-config-printer --noconfirm --needed
+
+sudo systemctl enable org.cups.cupsd.service
+
+echo "After rebooting it will work"
+
+echo ""
+
+# -----------------
 # Network Discovery
 # -----------------
 
@@ -142,8 +166,11 @@ sudo pacman -S --noconfirm --needed youtube-dl              #Programa para desca
 
 echo "Installing category Office"
 
+sudo pacman -S --noconfirm --needed libreoffice             # Libreoffice
+sudo pacman -S --noconfirm --needed libreoffice-es          # Libreoffice español
 sudo pacman -S --noconfirm --needed evince                  # Visor de pdf
-sudo pacman -S --noconfirm --needed libreoffice-fresh       # Libreoffice
+sudo pacman -S --noconfirm --needed okular                  # Es uno de los más populares y completos visores de documentos, te permite ver archivos formatos del tipo PDF, EPUB, CBR y CBZ (cómics).
+sudo pacman -S --noconfirm --needed gedit                   # Editor de texto    
 
 echo "Installing category System"
 
@@ -166,7 +193,6 @@ sudo pacman -S --noconfirm --needed termite                 # Terminal termite p
 sudo pacman -S --noconfirm --needed thunar                  # Thunar es el gestor de archivos lanzado oficialmente con la versión 4.4 de Xfce
 sudo pacman -S --noconfirm --needed thunar-archive-plugin
 sudo pacman -S --noconfirm --needed thunar-volman
-
 sudo pacman -S --noconfirm --needed tumbler                 # is part of the XFCE standard installation
 sudo pacman -S --noconfirm --needed virtualbox-host-modules-arch # Virtualbox es un software de virtualización para arquitecturas x86/amd64
 sudo pacman -S --noconfirm --needed virtualbox              # Virtualbox es un software de virtualización para arquitecturas x86/amd64
@@ -238,9 +264,11 @@ yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
 yay -S --noconfirm --needed gksu                                        # Permite iniciar aplicaciones gráficas desde consola con otro usuario pidiendo sus datos.
 yay -S --noconfirm --needed cherrytree                                  # Programa de notas offline
 #yay -S --noconfirm --needed remmina-plugin-rdesktop                    # Plugin para rdesktop de remina
+yay -S --noconfirm --needed etcher-bin                                  # Etcher es una utilidad gratuita y de código abierto que se utiliza para grabar archivos de imagen como archivos .iso y .img
+#yay -S --noconfirm --needed octopi                                     # Octopi es un frontend para pacman muy poderoso. Con esta aplicación podremos administrar nuestra paqueteria de forma amigables
+yay -S --noconfirm --needed sublime-text                                # Sublime Text es un editor de texto y editor de código fuente está escrito en C++ y Python para los plugins.Desarrollado originalmente como una extensión de Vim.
 
 # these come always last
-
 yay -S --noconfirm --needed hardcode-fixer-git                          # Este programa pretende ser una solución segura, fácil y estandarizada al problema de los iconos de aplicaciones codificados en Linux. 
 sudo hardcode-fixer
 

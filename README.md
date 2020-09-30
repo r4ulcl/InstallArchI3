@@ -5,7 +5,7 @@ List of files and scripts to install in a fresh arch install, if this have some 
 All for the i3wm enviroment
 
 ## Usage
-Clone the repo: ``` git clone https://github.com/DeadS3c/InstallArchI3 ```
+Clone the repo: ``` git clone https://github.com/Loop-Man/InstallArchI3 ```
 
 Change to directory: ``` cd InstallArchI3 ```
 

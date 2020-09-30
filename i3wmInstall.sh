@@ -27,11 +27,13 @@ sudo pacman -Syu --noconfirm --needed
 # -------------------
 
 echo "Setting Sound"
-
-sudo pacman -S pulseaudio --noconfirm --needed
-sudo pacman -S pulseaudio-alsa --noconfirm --needed
-sudo pacman -S pavucontrol  --noconfirm --needed
-sudo pacman -S alsa-utils alsa-plugins alsa-lib alsa-firmware --noconfirm --needed
+sudo pacman -S --noconfirm --needed pulseaudio
+sudo pacman -S --noconfirm --needed pulseaudio-alsa
+sudo pacman -S --noconfirm --needed pavucontrol
+sudo pacman -S --noconfirm --needed alsa-utils
+sudo pacman -S --noconfirm --needed alsa-plugins
+sudo pacman -S --noconfirm --needed alsa-lib
+sudo pacman -S --noconfirm --needed alsa-firmware
 
 echo ""
 
@@ -64,17 +66,24 @@ echo ""
 
 echo "Setting Printers"
 
-sudo pacman -S --noconfirm --needed cups cups-pdf
+sudo pacman -S --noconfirm --needed cups 
+sudo pacman -S --noconfirm --needed cups-pdf
+
 
 #first try if you can print without foomatic
-#sudo pacman -S foomatic-db-engine --noconfirm --needed
-#sudo pacman -S foomatic-db foomatic-db-ppds foomatic-db-nonfree-ppds foomatic-db-gutenprint-ppds --noconfirm --needed
+#sudo pacman -S --noconfirm --needed foomatic-db-engine
+#sudo pacman -S --noconfirm --needed foomatic-db
+#sudo pacman -S --noconfirm --needed foomatic-db-ppds
+#sudo pacman -S --noconfirm --needed foomatic-db-nonfree-ppds
+#sudo pacman -S --noconfirm --needed foomatic-db-gutenprint-ppds
 
-sudo pacman -S ghostscript gsfonts gutenprint --noconfirm --needed
-sudo pacman -S gtk3-print-backends --noconfirm --needed
-sudo pacman -S libcups --noconfirm --needed
-sudo pacman -S hplip --noconfirm --needed
-sudo pacman -S system-config-printer --noconfirm --needed
+sudo pacman -S --noconfirm --needed ghostscript
+sudo pacman -S --noconfirm --needed gsfonts 
+sudo pacman -S --noconfirm --needed gutenprint
+sudo pacman -S --noconfirm --needed gtk3-print-backends
+sudo pacman -S --noconfirm --needed libcups
+sudo pacman -S --noconfirm --needed hplip
+sudo pacman -S --noconfirm --needed system-config-printer
 
 sudo systemctl enable org.cups.cupsd.service
 
@@ -88,9 +97,11 @@ echo ""
 
 echo "Setting Network Discovery"
 
-sudo pacman -S --noconfirm --needed wget curl
+sudo pacman -S --noconfirm --needed wget 
+sudo pacman -S --noconfirm --needed curl
 sudo pacman -S --noconfirm --needed network-manager-applet
 sudo pacman -S --noconfirm --needed avahi                       #Avahi es un entorno totalmente LGPL para el descubrimiento de servicios de DNS multicast
+
 sudo systemctl enable avahi-daemon.service
 sudo systemctl start avahi-daemon.service
 
@@ -179,7 +190,8 @@ sudo pacman -S --noconfirm --needed git                     # CLI del software d
 #sudo pacman -S --noconfirm --needed glances                # Herramienta de monitorización del sistema por CLI
 sudo pacman -S --noconfirm --needed gparted                 # is a free partition editor for graphically managing your disk partitions
 #sudo pacman -S --noconfirm --needed grsync                 # rsync es una herramienta diferencial de copia de seguridad y sincronización de archivos
-sudo pacman -S --noconfirm --needed gvfs gvfs-mtp           # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME para detectar dispositivos extraibles.
+sudo pacman -S --noconfirm --needed gvfs                    # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME para detectar dispositivos extraibles.
+sudo pacman -S --noconfirm --needed gvfs-mtp                # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME para detectar dispositivos extraibles.
 #sudo pacman -S --noconfirm --needed hardinfo               # is a system profiler and benchmark for Linux systems
 sudo pacman -S --noconfirm --needed hddtemp                 # is a small utility (with daemon) that gives the hard-drive temperature
 sudo pacman -S --noconfirm --needed htop                    # es un sistema de monitorización, administración y visor de procesos interactivo
@@ -284,10 +296,9 @@ echo "Setting Display Manager"
 sudo pacman -S --noconfirm --needed i3-gaps                     # i3-gaps is a fork of i3wm, a tiling window manager for X11
 sudo pacman -S --noconfirm --needed i3blocks                    # Define bloques para la barra de estado de i3bar
 yay -S --noconfirm --needed ly-git                              # Ly is a lightweight TUI (ncurses-like) display manager for Linux and BSD.
+
 sudo systemctl enable ly.service
 sudo systemctl disable getty@tty2.service
-
-
 
 echo ""
 

@@ -15,4 +15,8 @@ Launch bspwmInstall, this will download all the necessary packages: ``` ./i3wmIn
 
 Launch configBspwm, this will finish with the configuration files: ``` ./i3wmConfig.sh ```
 
-Or you can launch all at one time with (first the installer all the neccesary packages): ``` ./i3wmInstall.sh && ./i3wmConfig.sh ``` 
+Launch vmwaretools, this will install vmwaretools: ``` ./VMwareTools.sh ```
+
+Launch InstallZSH.sh, this will install InstallZSH.sh: ``` ./InstallZSH.sh ```
+
+Or you can launch all at one time with (first the installer all the neccesary packages): ``` ./i3wmInstall.sh && ./i3wmConfig.sh && ./VMwareTools.sh ./InstallZSH.sh ``` 

@@ -15,6 +15,10 @@ Launch bspwmInstall, this will download all the necessary packages: ``` ./i3wmIn
 
 Launch configBspwm, this will finish with the configuration files: ``` ./i3wmConfig.sh ```
 
+Reboot and login
+
+Change to directory: ``` cd InstallArchI3 ```
+
 Launch vmwaretools, this will install vmwaretools: ``` ./VMwareTools.sh ```
 
 Launch InstallZSH.sh, this will install InstallZSH.sh: ``` ./InstallZSH.sh ```

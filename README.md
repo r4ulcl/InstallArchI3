@@ -9,7 +9,7 @@ Clone the repo: ``` git clone https://github.com/Loop-Man/InstallArchI3 ```
 
 Change to directory: ``` cd InstallArchI3 ```
 
-Change file permissions: ``` chmod +x i3wmInstall.sh i3wmConfig.sh ```
+Change file permissions: ``` chmod +x i3wmInstall.sh i3wmConfig.sh VMwareTools.sh InstallZSH.sh```
 
 Launch bspwmInstall, this will download all the necessary packages: ``` ./i3wmInstall.sh ```
 

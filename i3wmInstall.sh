@@ -451,7 +451,7 @@ sudo pacman -S --noconfirm --needed redshift            # Ajusta la temperatura 
 sudo pacman -S --noconfirm --needed code        # Para programar con visual-studio-code
 sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpetas
 sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un programa
-sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
+#sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
 sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
 sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman

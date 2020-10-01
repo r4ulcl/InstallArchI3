@@ -64,10 +64,10 @@ echo ""
 # Printers
 # -----------------
 
-echo "Setting Printers"
+#echo "Setting Printers"
 
-sudo pacman -S --noconfirm --needed cups 
-sudo pacman -S --noconfirm --needed cups-pdf
+#sudo pacman -S --noconfirm --needed cups 
+#sudo pacman -S --noconfirm --needed cups-pdf
 
 
 #first try if you can print without foomatic
@@ -77,19 +77,19 @@ sudo pacman -S --noconfirm --needed cups-pdf
 #sudo pacman -S --noconfirm --needed foomatic-db-nonfree-ppds
 #sudo pacman -S --noconfirm --needed foomatic-db-gutenprint-ppds
 
-sudo pacman -S --noconfirm --needed ghostscript
-sudo pacman -S --noconfirm --needed gsfonts 
-sudo pacman -S --noconfirm --needed gutenprint
-sudo pacman -S --noconfirm --needed gtk3-print-backends
-sudo pacman -S --noconfirm --needed libcups
-sudo pacman -S --noconfirm --needed hplip
-sudo pacman -S --noconfirm --needed system-config-printer
+#sudo pacman -S --noconfirm --needed ghostscript
+#sudo pacman -S --noconfirm --needed gsfonts 
+#sudo pacman -S --noconfirm --needed gutenprint
+#sudo pacman -S --noconfirm --needed gtk3-print-backends
+#sudo pacman -S --noconfirm --needed libcups
+#sudo pacman -S --noconfirm --needed hplip
+#sudo pacman -S --noconfirm --needed system-config-printer
 
-sudo systemctl enable org.cups.cupsd.service
+#sudo systemctl enable org.cups.cupsd.service
 
-echo "After rebooting it will work"
+#echo "After rebooting it will work"
 
-echo ""
+#echo ""
 
 # -----------------
 # Network Discovery

@@ -22,7 +22,7 @@ echo "Copying Files to HOME ..."
 cp .bashrc ~/.
 cp .tmux.conf ~/.
 cp vimrc ~/.vim
-#cp .Xresources ~/.
+cp .Xresources ~/.
 #cp .xinitrc ~/.
 
 echo "Copying config files to .config folder..."

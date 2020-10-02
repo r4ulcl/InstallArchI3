@@ -159,15 +159,15 @@ echo "Installing category Internet"
 
 sudo pacman -S --noconfirm --needed chromium
 sudo pacman -S --noconfirm --needed firefox
-#sudo pacman -S --noconfirm --needed qbittorrent
-#sudo pacman -S --noconfirm --needed lynx                   # Lynx es un navegador web y cliente de gopher en modo texto
+sudo pacman -S --noconfirm --needed qbittorrent
+sudo pacman -S --noconfirm --needed lynx                   # Lynx es un navegador web y cliente de gopher en modo texto
 sudo pacman -S --noconfirm --needed tor 
 sudo pacman -S --noconfirm --needed torsocks
 sudo pacman -S --noconfirm --needed torbrowser-launcher
-#sudo pacman -S --noconfirm --needed nyx                    # Nyx is a command-line monitor for Tor. With this you can get detailed real-time information about your relay such as bandwidth usage, connections, logs, and much more.
-#sudo pacman -S --noconfirm --needed thunderbird            # Gestor de correo
+sudo pacman -S --noconfirm --needed nyx                    # Nyx is a command-line monitor for Tor. With this you can get detailed real-time information about your relay such as bandwidth usage, connections, logs, and much more.
+sudo pacman -S --noconfirm --needed thunderbird            # Gestor de correo
 #sudo pacman -S --noconfirm --needed pidgin                 # For social media
-#sudo pacman -S --noconfirm --needed w3m                    # W3m es un navegador web basado en texto así como un paginador. Se parece mucho a Lynx
+sudo pacman -S --noconfirm --needed w3m                    # W3m es un navegador web basado en texto así como un paginador. Se parece mucho a Lynx
 
 echo "Installing category Multimedia"
 
@@ -217,14 +217,14 @@ sudo pacman -S --noconfirm --needed xdotool                 # CLI X11 automation
 sudo pacman -S --noconfirm --needed zenity                  # Zenity es un conjunto de cajas de diálogos gráficas que usan las librerías gtk
 sudo pacman -S --noconfirm --needed man                     # Man es una aplicación que proporciona manuales para los comandos utilizados
 sudo pacman -S --noconfirm --needed cmake                   # CMake es una herramienta multiplataforma de generación o automatización de código
-#sudo pacman -S --noconfirm --needed ranger                 # Ranger, un potente administrador de archivos para el terminal
+sudo pacman -S --noconfirm --needed ranger                 # Ranger, un potente administrador de archivos para el terminal
 sudo pacman -S --noconfirm --needed reflector               # Reflector is a Python script which can retrieve the latest mirror list from the Arch Linux    
 sudo pacman -S --noconfirm --needed dnsutils                # Proporciona herramientas para consultas dns
 sudo pacman -S --noconfirm --needed xorg-xbacklight         # Aplicación para controlar la iluminación
 sudo pacman -S --noconfirm --needed grc                     # Comando para darle color a la salida de los comandos
 sudo pacman -S --noconfirm --needed xclip                   # Comando para copiar la salida al portapapeles
 sudo pacman -S --noconfirm --needed jq                      # Comando para parsear json
-#sudo pacman -S --noconfirm --needed fish                   # Fish shell
+sudo pacman -S --noconfirm --needed fish                   # Fish shell
 sudo pacman -S --noconfirm --needed nfs-utils               # Herramientas para consultas nfs, NFS is a protocol that allows sharing file systems over the network. 
 sudo pacman -S --noconfirm --needed tree                    # Comando para ver directorios en modo arbol
 #sudo pacman -S --noconfirm --needed remmina                # Remmina es un cliente de escritorio remoto para sistemas operativos de computadora basados en POSIX. Es compatible con los protocolos Remote Desktop Protocol, VNC, NX, XDMCP, SPICE y SSH
@@ -272,13 +272,13 @@ yay -S --noconfirm --needed the_platinum_searcher-bin                   #  A cod
 yay -S --noconfirm --needed ttf-font-awesome                            # FUENTE
 yay -S --noconfirm --needed ttf-mac-fonts                               # FUENTE
 yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
-#yay -S --noconfirm --needed brave-nightly-bin                          # Navegador web brave
+yay -S --noconfirm --needed brave-nightly-bin                          # Navegador web brave
 yay -S --noconfirm --needed gksu                                        # Permite iniciar aplicaciones gráficas desde consola con otro usuario pidiendo sus datos.
 yay -S --noconfirm --needed cherrytree                                  # Programa de notas offline
 #yay -S --noconfirm --needed remmina-plugin-rdesktop                    # Plugin para rdesktop de remina
 yay -S --noconfirm --needed etcher-bin                                  # Etcher es una utilidad gratuita y de código abierto que se utiliza para grabar archivos de imagen como archivos .iso y .img
 #yay -S --noconfirm --needed octopi                                     # Octopi es un frontend para pacman muy poderoso. Con esta aplicación podremos administrar nuestra paqueteria de forma amigables
-yay -S --noconfirm --needed sublime-text                                # Sublime Text es un editor de texto y editor de código fuente está escrito en C++ y Python para los plugins.Desarrollado originalmente como una extensión de Vim.
+#yay -S --noconfirm --needed sublime-text                                # Sublime Text es un editor de texto y editor de código fuente está escrito en C++ y Python para los plugins.Desarrollado originalmente como una extensión de Vim.
 
 # these come always last
 yay -S --noconfirm --needed hardcode-fixer-git                          # Este programa pretende ser una solución segura, fácil y estandarizada al problema de los iconos de aplicaciones codificados en Linux. 
@@ -437,7 +437,7 @@ sudo pacman -S --noconfirm --needed telegram-desktop
 #sudo pacman -S --noconfirm --needed clamav
 
 # Uncomplicated Firewall
-#sudo pacman -S --noconfirm --needed ufw
+sudo pacman -S --noconfirm --needed ufw
 
 # Criptography
 sudo pacman -S --noconfirm --needed gnupg               # GnuPG permite cifrar y firmar tus datos y comunicaciones, incluye un sistema versátil de gestión de claves
@@ -451,7 +451,6 @@ sudo pacman -S --noconfirm --needed redshift            # Ajusta la temperatura 
 sudo pacman -S --noconfirm --needed code        # Para programar con visual-studio-code
 sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpetas
 sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un programa
-#sudo pacman -S --noconfirm --needed praght      # Para reproducir audios
 sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
 sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman

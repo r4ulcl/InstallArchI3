@@ -31,6 +31,7 @@ cp -r config/Thunar ~/.config/
 cp -r config/fish ~/.config/
 cp -r config/i3blocks ~/.config/
 cp -r config/termite ~/.config/termite
+cp -r config/picom ~/.config/picom
 
 echo "Copying wallpapers"
 

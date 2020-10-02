@@ -39,7 +39,8 @@ fi
 sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared/ -o allow_other
 
 ## Activamos copiar y pegar entre sistemas
-#echo "run vmware-user &" >> ~/.config/bspwm/autostart.sh ### Para que se ejecute siempre al iniciar
+echo "# Para ejecutar vmware-user siempre al iniciar i3" >> ~/.config/i3/config
+echo "exec --no-startup-id vmware-user &" >> ~/.config/i3/config ### Para que se ejecute siempre al iniciar
 vmware-user
 
 echo "Realiza un reboot"

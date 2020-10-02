@@ -217,20 +217,20 @@ sudo pacman -S --noconfirm --needed xdotool                 # CLI X11 automation
 sudo pacman -S --noconfirm --needed zenity                  # Zenity es un conjunto de cajas de diálogos gráficas que usan las librerías gtk
 sudo pacman -S --noconfirm --needed man                     # Man es una aplicación que proporciona manuales para los comandos utilizados
 sudo pacman -S --noconfirm --needed cmake                   # CMake es una herramienta multiplataforma de generación o automatización de código
-sudo pacman -S --noconfirm --needed ranger                 # Ranger, un potente administrador de archivos para el terminal
+sudo pacman -S --noconfirm --needed ranger                  # Ranger, un potente administrador de archivos para el terminal
 sudo pacman -S --noconfirm --needed reflector               # Reflector is a Python script which can retrieve the latest mirror list from the Arch Linux    
 sudo pacman -S --noconfirm --needed dnsutils                # Proporciona herramientas para consultas dns
 sudo pacman -S --noconfirm --needed xorg-xbacklight         # Aplicación para controlar la iluminación
 sudo pacman -S --noconfirm --needed grc                     # Comando para darle color a la salida de los comandos
 sudo pacman -S --noconfirm --needed xclip                   # Comando para copiar la salida al portapapeles
 sudo pacman -S --noconfirm --needed jq                      # Comando para parsear json
-sudo pacman -S --noconfirm --needed fish                   # Fish shell
+sudo pacman -S --noconfirm --needed fish                    # Fish shell
 sudo pacman -S --noconfirm --needed nfs-utils               # Herramientas para consultas nfs, NFS is a protocol that allows sharing file systems over the network. 
 sudo pacman -S --noconfirm --needed tree                    # Comando para ver directorios en modo arbol
 #sudo pacman -S --noconfirm --needed remmina                # Remmina es un cliente de escritorio remoto para sistemas operativos de computadora basados en POSIX. Es compatible con los protocolos Remote Desktop Protocol, VNC, NX, XDMCP, SPICE y SSH
 sudo pacman -S --noconfirm --needed rdesktop                # Cliente para RDP
 sudo pacman -S --noconfirm --needed calcurse                # calcurse is a calendar and scheduling application for the command line
-#sudo pacman -S --noconfirm --needed sysstat                # sysstat es una colección de herramientas de monitoreo de rendimiento para Linux
+sudo pacman -S --noconfirm --needed sysstat                 # sysstat es una colección de herramientas de monitoreo de rendimiento para Linux
 sudo pacman -S --noconfirm --needed task                    # Gestor de tareas
 sudo pacman -S --noconfirm --needed keepassxc               # Gestor de contraseñas
 

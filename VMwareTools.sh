@@ -43,4 +43,7 @@ echo "# Para ejecutar vmware-user siempre al iniciar i3" >> ~/.config/i3/config
 echo "exec --no-startup-id vmware-user &" >> ~/.config/i3/config ### Para que se ejecute siempre al iniciar
 vmware-user
 
+## Eliminamos la carpeta copiada del disco de las vmware.
+sudo rm -rf ~/vmware-tools*
+
 echo "Realiza un reboot"

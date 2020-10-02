@@ -11,9 +11,9 @@ separator=true
 separator_block_width=15
 command=blocks/$BLOCK_NAME
 
-#[taskwarrior]
-#label= 
-#interval=2
+[taskwarrior]
+label= 
+interval=2
 
 #[bandwidth]
 #interval=persist

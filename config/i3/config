@@ -170,7 +170,7 @@ client.placeholder      $xcolor7       $xcolor7     $xcolor14
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 1
 set $ws2 2:www
-set $ws3 3:IM
+set $ws3 3:
 set $ws4 4
 set $ws5 5
 set $ws6 6
@@ -380,14 +380,14 @@ mode "$mode_gaps_outer" {
 # Specific window behaviour
 assign [class="Brave-browser"] $ws2
 assign [class="firefox"] $ws2
-assign [class="Pidgin"] $ws3
-assign [class="Corebird"] $ws3
-assign [class="TelegramDesktop"] $ws3
-assign [class="Thunderbird"] $ws9
-assign [class="Exaile"] $ws10
-assign [class="KeePass2"] $ws8
-assign [title="Burp .*"] $ws11
-assign [title="OWASP ZAP"] $ws12
+#assign [class="Pidgin"] $ws3
+#assign [class="Corebird"] $ws3
+#assign [class="TelegramDesktop"] $ws3
+#assign [class="Thunderbird"] $ws9
+#assign [class="Exaile"] $ws10
+#assign [class="KeePass2"] $ws8
+#assign [title="Burp .*"] $ws11
+#assign [title="OWASP ZAP"] $ws12
 
 # XF KEYS
 
@@ -419,7 +419,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Autostart apps
-exec --no-startup-id picom --config $HOME/.config/bspwm/picom.conf &
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf &
 exec --no-startup-id feh --bg-fill --randomize ~/backgrounds/* &
 #exec --no-startup-id feh --bg-fill  ~/backgrounds/DRAMAtical.Murder.full.Noiz.jpg &
 exec --no-startup-id unclutter &

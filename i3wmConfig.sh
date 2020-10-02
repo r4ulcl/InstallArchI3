@@ -98,5 +98,6 @@ echo "sudo -- sh -c 'ln -sf /home/user/.config/fish /root/.config/'"
 
 echo "Remember set up firefox--> about:config --> ui.context_menus.after_mouseup --> true"
 echo "Remove InstallArch Directory"
+echo "Execute command "task" and after reboot"
 echo "Reboot, open vim and execute :PluginInstall"
-echo "Execute task after reboot"
+

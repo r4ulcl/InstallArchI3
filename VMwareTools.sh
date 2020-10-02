@@ -11,6 +11,7 @@ sudo mkdir -p /mnt/cdrom
 sudo mount /dev/cdrom /mnt/cdrom
 sleep 5
 tar xf /mnt/cdrom/VMwareTools*.tar.gz -C ~/
+sleep 3
 sudo perl ~/vmware-tools-distrib/vmware-install.pl
 sleep 5
 sudo umount /dev/cdrom

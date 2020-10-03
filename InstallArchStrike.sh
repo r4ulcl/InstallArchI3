@@ -2,6 +2,10 @@
 
 # Config ArchStrike
 # https://archstrike.org/wiki/setup
+
+# Modify /etc/pacman.conf
+sudo -- sh -c 'echo "" >> /etc/pacman.conf; echo "[archstrike]" >> /etc/pacman.conf; echo "Server = https://mirror.archstrike.org/\$arch/\$repo" >> /etc/pacman.conf'
+
 sudo pacman -Syy
 
 sudo pacman-key --init

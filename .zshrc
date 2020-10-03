@@ -114,6 +114,7 @@ alias ll='lsd -lht --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias lla='lsd -laht --group-dirs=first'
+alias l='ls -lah'
 
 alias cat='/usr/bin/bat'
 alias catn='/bin/cat'

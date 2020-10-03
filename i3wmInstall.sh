@@ -454,7 +454,8 @@ sudo pacman -S --noconfirm --needed xorg-xkill  # Para matar graficamente un pro
 sudo pacman -S --noconfirm --needed rlwrap      # rlwrap para consola con memoria en reverse shell
 sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman
-
+sudo pacman -S --noconfirm --needed lsd         # ls con esteroides
+sudo pacman -S --noconfirm --needed bat         # cat con esteroides
 
 ## Actualizo plugins, scripts y exploits
 

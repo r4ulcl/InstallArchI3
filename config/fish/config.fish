@@ -70,7 +70,7 @@ alias wget="wget -c"
 # pacman or pm
 alias pacman='sudo pacman --color=auto'
 #alias update='sudo pacman -Syu'
-alias actualizar='sudo pacman -Syu --noconfirm;sudo pacman -Rsu $(pacman -Qdtq) --noconfirm;yay -Syu --noconfirm'
+alias actualizar='sudo pacman -Syu --noconfirm;sudo pacman -Rsu (pacman -Qdtq) --noconfirm;yay -Syu --noconfirm'
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
@@ -107,7 +107,7 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 #alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
 
 #Montar carpeta compartida en vmware
-alias montar='sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared -o allow_other'
+alias montar='sudo mount -t fuse.vmhgfs-fuse .host:/(vmware-hgfsclient) ~/Shared -o allow_other'
 
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "

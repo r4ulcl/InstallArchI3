@@ -30,20 +30,24 @@ end
 set -xg READER zathura
 set -xg SUDO_ASKPASS "$HOME/.config/i3/bin/dmenupass"
 
-
 # Personal Aliases
 
 # list
 alias ls='ls --color=auto'
-alias la='ls -a'
-alias ll='ls -lah --group-directories-first'
-alias l='ls'
+alias la='ls -a --color=auto'
+alias l='ls -lah --group-directories-first --color=auto'
+alias ll='ls --color=auto'
 alias l.="ls -A | egrep '^\.'"
 
 # Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# Use bat for cat
+alias cat='/usr/bin/bat'
+alias catn='/bin/cat'
+alias catnl='/usr/bin/bat --paging=never'
 
 # mv cp rm verbose
 alias mv='mv -iv'
@@ -53,9 +57,6 @@ alias rm='rm -v'
 #readable output
 alias df='df -h'
 
-#pacman unlock
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-
 #free
 alias free="free -mt"
 
@@ -63,12 +64,22 @@ alias free="free -mt"
 alias wget="wget -c"
 
 #merge new settings
-alias merge="xrdb -merge ~/.Xresources"
+#alias merge="xrdb -merge ~/.Xresources"
 
 # Aliases for software managment
 # pacman or pm
 alias pacman='sudo pacman --color=auto'
-alias update='sudo pacman -Syu'
+#alias update='sudo pacman -Syu'
+alias actualizar='sudo pacman -Syu --noconfirm;sudo pacman -Rsu $(pacman -Qdtq) --noconfirm;yay -Syu --noconfirm'
+
+#pacman unlock
+alias unlock="sudo rm /var/lib/pacman/db.lck"
+
+#updateplugins
+alias update='sudo updatedb;sudo searchsploit -u;sudo nmap --script-updatedb;sudo cve_searchsploit -u'
+
+#HTB vpn
+alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn'
 
 #ps
 alias psa="ps auxf"
@@ -93,7 +104,10 @@ alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/p
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 #mounting the folder Public for exchange between host and guest on virtualbox
-alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
+#alias vbm="sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Public /home/$USER/Public"
+
+#Montar carpeta compartida en vmware
+alias montar='sudo mount -t fuse.vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/Shared -o allow_other'
 
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
@@ -130,6 +144,7 @@ alias sr="sudo reboot"
 # Personal Configuration
 #alias rg='RIPGREP_CONFIG_PATH=~/.ripgreprc rg'
 alias nmap='grc nmap'
+alias nc='ncat'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

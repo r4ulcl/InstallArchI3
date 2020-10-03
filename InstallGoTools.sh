@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Installing go tools"
 go get -u github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei

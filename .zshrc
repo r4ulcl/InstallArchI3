@@ -120,8 +120,9 @@ alias catn='/bin/cat'
 alias catnl='/usr/bin/bat --paging=never'
 
 alias nmap='grc nmap'
-alias nc='ncat'
+#alias nc='ncat'
 alias ip46='ip -br -c a'
+alias xxclip='xclip -sel clip'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'

@@ -59,6 +59,9 @@ alias catnl='/usr/bin/bat --paging=never'
 # IPv4 e IPv6
 alias ip46='ip -br -c a'
 
+# xclip al clipboard
+alias xxclip='xclip -sel clip'
+
 # mv cp rm verbose
 alias mv='mv -iv'
 alias cp='cp -iv'

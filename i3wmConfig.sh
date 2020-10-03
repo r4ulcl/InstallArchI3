@@ -62,8 +62,8 @@ sudo localectl set-x11-keymap es # Set the keyboard map to es
 # sudo localectl set-x11-keymap colemak # Set the keyboard map to colemak
 
 # Config pacman
-sudo cp mirrorupgrade.hook /etc/pacman.d/hooks/
-sudo cp pacman.conf /etc/
+#sudo cp mirrorupgrade.hook /etc/pacman.d/hooks/
+#sudo cp pacman.conf /etc/
 
 echo "Installing go tools"
 go get -u github.com/projectdiscovery/subfinder/v2/cmd/subfinder

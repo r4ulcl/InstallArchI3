@@ -26,6 +26,11 @@ egrep "^export " ~/.bashrc | while read e
 	set -xg $var $value
 end
 
+# Environmental Variables
+set -xg READER zathura
+set -xg SUDO_ASKPASS "$HOME/.config/i3/bin/dmenupass"
+
+
 # Personal Aliases
 
 # list

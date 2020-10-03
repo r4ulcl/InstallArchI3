@@ -36,6 +36,7 @@ cp -r config/picom ~/.config/picom
 echo "Copying config file samba"
 
 sudo cp -r smb.conf /etc/samba/smb.conf
+testparm
 
 echo "Copying wallpapers"
 

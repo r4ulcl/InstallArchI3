@@ -43,7 +43,8 @@ set -xg SUDO_ASKPASS "$HOME/.config/i3/bin/dmenupass"
 alias ll='lsd -lht --group-dirs=first'
 alias la='lsd -a --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias lla='lsd -laht --group-dirs=first'
+#alias lla='lsd -laht --group-dirs=first'
+alias l='lsd -laht --group-dirs=first'
 
 # Colorize the grep command output for ease of use (good for log files)##
 alias grep='grep --color=auto'

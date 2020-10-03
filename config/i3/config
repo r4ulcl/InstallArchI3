@@ -326,7 +326,8 @@ bindsym $modkey+c exec $term -e calcurse
 # Start Apps
 bindsym $modkey+a exec --no-startup-id xfce4-appfinder
 bindsym $modkey+n exec --no-startup-id nm-connection-editor
-bindsym $modkey+b exec --no-startup-id gksudo burpsuite
+#bindsym $modkey+b exec --no-startup-id gksudo burpsuite
+bindsym $modkey+b exec --no-startup-id sudo -A burpsuite
 
 # Misc (above)
 new_window pixel 4

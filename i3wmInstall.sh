@@ -458,6 +458,7 @@ sudo pacman -S --noconfirm --needed openvpn     # Cliente vpn
 sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de pacman
 sudo pacman -S --noconfirm --needed lsd         # ls con esteroides
 sudo pacman -S --noconfirm --needed bat         # cat con esteroides
+sudo pacman -S --noconfirm --needed samba       # Instalar samba
 
 ## Actualizo plugins, scripts y exploits
 

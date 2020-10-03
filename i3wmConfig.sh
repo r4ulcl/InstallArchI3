@@ -63,7 +63,7 @@ sudo localectl set-x11-keymap es # Set the keyboard map to es
 
 # Config pacman
 
-if [ ! -d "/etc/pacman.d/hooks/" ]
+if [ ! -d "/etc/pacman.d/hooks" ]
 then
     sudo mkdir -p /etc/pacman.d/hooks
 fi

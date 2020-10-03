@@ -168,9 +168,9 @@ client.placeholder      $xcolor7       $xcolor7     $xcolor14
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 1
+set $ws1 1:cmd
 set $ws2 2:www
-set $ws3 3:
+set $ws3 3
 set $ws4 4
 set $ws5 5
 set $ws6 6
@@ -178,8 +178,8 @@ set $ws7 7
 set $ws8 8
 set $ws9 9:Email
 set $ws10 10:Music
-set $ws11 A
-set $ws12 B
+#set $ws11 A
+#set $ws12 B
 
 # switch to workspace
 bindsym $modkey+1 workspace $ws1
@@ -192,8 +192,8 @@ bindsym $modkey+7 workspace $ws7
 bindsym $modkey+8 workspace $ws8
 bindsym $modkey+9 workspace $ws9
 bindsym $modkey+0 workspace $ws10
-bindsym $modkey+minus workspace $ws11
-bindsym $modkey+equal workspace $ws12
+#bindsym $modkey+minus workspace $ws11
+#bindsym $modkey+equal workspace $ws12
 
 # move focused container to workspace
 bindsym $modkey+Shift+1 move container to workspace $ws1
@@ -206,8 +206,8 @@ bindsym $modkey+Shift+7 move container to workspace $ws7
 bindsym $modkey+Shift+8 move container to workspace $ws8
 bindsym $modkey+Shift+9 move container to workspace $ws9
 bindsym $modkey+Shift+0 move container to workspace $ws10
-bindsym $modkey+Shift+minus move container to workspace $ws11
-bindsym $modkey+Shift+equal move container to workspace $ws12
+#bindsym $modkey+Shift+minus move container to workspace $ws11
+#bindsym $modkey+Shift+equal move container to workspace $ws12
 
 # reload the configuration file
 bindsym $modkey+Shift+C reload
@@ -312,8 +312,8 @@ bindsym $modkey+e exec $term -e ranger
 
 bindsym $modkey+u exec $term -e gtop
 
-#bindsym $modkey+Shift+Return exec --no-startup-id thunar
-bindsym $modkey+backslash exec --no-startup-id thunar
+bindsym $modkey+Shift+Return exec --no-startup-id thunar
+#bindsym $modkey+backslash exec --no-startup-id thunar
 
 bindsym $modkey+Shift+w exec $term -e nmtui
 

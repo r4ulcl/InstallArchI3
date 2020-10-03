@@ -9,7 +9,7 @@ Clone the repo: ``` git clone https://github.com/Loop-Man/InstallArchI3 ```
 
 Change to directory: ``` cd InstallArchI3 ```
 
-Change file permissions: ``` chmod +x i3wmInstall.sh i3wmConfig.sh VMwareTools.sh InstallZSH.sh InstallArchStrike.sh```
+Change file permissions: ``` chmod +x i3wmInstall.sh i3wmConfig.sh VMwareTools.sh InstallZSH.sh InstallArchStrike.sh InstallGoTools.sh```
 
 Launch bspwmInstall, this will download all the necessary packages: ``` ./i3wmInstall.sh ```
 
@@ -20,6 +20,8 @@ Reboot and login
 Change to directory: ``` cd InstallArchI3 ```
 
 Launch InstallArchStrike.sh, this will install ArchStrike repo: ``` ./InstallArchStrike.sh ```
+
+Launch InstallGoTools.sh, this will install go tools:  ``` ./InstallGoTools.sh ```
 
 Launch vmwaretools, this will install vmwaretools: ``` ./VMwareTools.sh ```
 

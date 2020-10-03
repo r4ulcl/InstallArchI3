@@ -33,6 +33,10 @@ cp -r config/i3blocks ~/.config/
 cp -r config/termite ~/.config/termite
 cp -r config/picom ~/.config/picom
 
+echo "Copying config file samba"
+
+sudo cp -r smb.conf /etc/samba/smb.conf
+
 echo "Copying wallpapers"
 
 if [ ! -d "~/backgrounds" ]

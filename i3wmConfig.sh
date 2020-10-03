@@ -88,8 +88,7 @@ echo "sudo -- sh -c 'ln -sf /home/user/.tmux.conf /root/.tmux.conf'"
 echo "sudo -- sh -c 'ln -sf /home/user/.bashrc /root/.bashrc'"
 echo "sudo -- sh -c 'ln -sf /home/user/.config/fish /root/.config/'"
 
-echo "Remember set up firefox--> about:config --> ui.context_menus.after_mouseup --> true"
-echo "Remove InstallArch Directory"
-echo "Execute command "task" and after reboot"
-echo "Reboot, open vim and execute :PluginInstall"
-
+#echo "Remember set up firefox--> about:config --> ui.context_menus.after_mouseup --> true"
+#echo "Remove InstallArch Directory"
+echo "Reboot, Execute command "task""
+echo "Open vim and execute :PluginInstall"

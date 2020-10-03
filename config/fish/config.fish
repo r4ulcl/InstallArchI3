@@ -157,7 +157,7 @@ alias sr="sudo reboot"
 # Personal Configuration
 #alias rg='RIPGREP_CONFIG_PATH=~/.ripgreprc rg'
 alias nmap='grc nmap'
-alias nc='ncat'
+#alias nc='ncat'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

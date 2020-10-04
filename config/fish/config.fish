@@ -83,7 +83,8 @@ alias wget="wget -c"
 # pacman or pm
 alias pacman='sudo pacman --color=auto'
 #alias update='sudo pacman -Syu'
-alias actualizar='sudo pacman -Syu --noconfirm;sudo pacman -Rsu (pacman -Qdtq) --noconfirm;yay -Syu --noconfirm'
+#alias actualizar='sudo pacman -Syu --noconfirm;sudo pacman -Rsu (pacman -Qdtq) --noconfirm;yay -Syu --noconfirm'
+alias actualizar='sudo pacman -Syu --noconfirm;yay -Syu --noconfirm'
 
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"

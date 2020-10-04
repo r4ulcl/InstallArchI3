@@ -466,3 +466,9 @@ sudo updatedb
 sudo searchsploit -u
 sudo nmap --script-updatedb
 sudo cve_searchsploit -u
+
+## Instalo xfreerdp
+
+#git clone https://aur.archlinux.org/rocket-depot-git.git ~/tools/
+#cd ~/tools/rocket-depot-git
+#makepkg -si

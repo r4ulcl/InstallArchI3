@@ -42,6 +42,9 @@ sudo pacman -S --noconfirm --needed metagoofil
 sudo pacman -S --noconfirm --needed smtp-user-enum
 sudo pacman -S --noconfirm --needed fierce-git
 sudo pacman -S --noconfirm --needed responder
+sudo pacman -S --noconfirm --needed smbmap-git  # Instala smbmap para enumerar por samba.
+sudo pacman -S --noconfirm --needed evil-winrm  # Shell WinRM
+
 # For windows
 sudo pacman -S --noconfirm --needed windows-binaries
 sudo pacman -S --noconfirm --needed mimikatz

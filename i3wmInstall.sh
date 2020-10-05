@@ -279,8 +279,6 @@ yay -S --noconfirm --needed cherrytree                                  # Progra
 yay -S --noconfirm --needed etcher-bin                                  # Etcher es una utilidad gratuita y de código abierto que se utiliza para grabar archivos de imagen como archivos .iso y .img
 #yay -S --noconfirm --needed octopi                                     # Octopi es un frontend para pacman muy poderoso. Con esta aplicación podremos administrar nuestra paqueteria de forma amigables
 #yay -S --noconfirm --needed sublime-text                                # Sublime Text es un editor de texto y editor de código fuente está escrito en C++ y Python para los plugins.Desarrollado originalmente como una extensión de Vim.
-yay -S --noconfirm --needed rockyou                                     # Diccionario rockyou de owasp
-yay -S --noconfirm --needed samdump2                                    # Para dumpear password en claro de los ficheros sam y system
 
 # these come always last
 yay -S --noconfirm --needed hardcode-fixer-git                          # Este programa pretende ser una solución segura, fácil y estandarizada al problema de los iconos de aplicaciones codificados en Linux. 
@@ -448,7 +446,7 @@ sudo pacman -S --noconfirm --needed gnupg               # GnuPG permite cifrar y
 sudo pacman -S --noconfirm --needed redshift            # Ajusta la temperatura del color de tu pantalla
 
 
-# Custom Loop-Man
+# Custom Loop-Man pacman
 
 sudo pacman -S --noconfirm --needed code        # Para programar con visual-studio-code
 sudo pacman -S --noconfirm --needed meld        # Para comparar ficheros o carpetas
@@ -459,6 +457,12 @@ sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de 
 sudo pacman -S --noconfirm --needed lsd         # ls con esteroides
 sudo pacman -S --noconfirm --needed bat         # cat con esteroides
 sudo pacman -S --noconfirm --needed samba       # Instalar samba
+
+# Custom Loop-Man yay
+
+yay -S --noconfirm --needed rockyou                                     # Diccionario rockyou de owasp
+yay -S --noconfirm --needed samdump2                                    # Para dumpear password en claro de los ficheros sam y system
+yay -S --noconfirm --needed neo4j-community                             # A fully transactional graph database implemented in Java. Need for bloodhound
 
 ## Actualizo plugins, scripts y exploits
 

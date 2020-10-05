@@ -457,6 +457,7 @@ sudo pacman -S --noconfirm --needed openbsd-netcat # Netcat que mas me gusta de 
 sudo pacman -S --noconfirm --needed lsd         # ls con esteroides
 sudo pacman -S --noconfirm --needed bat         # cat con esteroides
 sudo pacman -S --noconfirm --needed samba       # Instalar samba
+sudo pacman -S --noconfirm --needed python-pipenv #Instala pipenv para crear entornos virtuales con librerias independientes de las del sistema
 
 # Custom Loop-Man yay
 

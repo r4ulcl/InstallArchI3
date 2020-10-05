@@ -462,7 +462,7 @@ sudo pacman -S --noconfirm --needed samba       # Instalar samba
 
 yay -S --noconfirm --needed rockyou                                     # Diccionario rockyou de owasp
 yay -S --noconfirm --needed samdump2                                    # Para dumpear password en claro de los ficheros sam y system
-yay -S --noconfirm --needed neo4j-git                             # A fully transactional graph database implemented in Java. Need for bloodhound
+#yay -S --noconfirm --needed neo4j-git                                  # A fully transactional graph database implemented in Java. Need for bloodhound (No funciona)
 
 ## Actualizo plugins, scripts y exploits
 

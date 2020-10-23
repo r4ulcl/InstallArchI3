@@ -377,6 +377,7 @@ echo "Installing Tools for Pentesting"
 # Pacman repo
 sudo pacman -S --noconfirm --needed nmap
 sudo pacman -S --noconfirm --needed aircrack-ng
+sudo pacman -S --noconfirm --needed usbutils
 sudo pacman -S --noconfirm --needed bettercap
 sudo pacman -S --noconfirm --needed inetutils
 sudo pacman -S --noconfirm --needed openssh

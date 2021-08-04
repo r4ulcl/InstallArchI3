@@ -14,27 +14,25 @@ sudo pacman -S --noconfirm --needed zshdb
 
 sudo pacman -S --noconfirm --needed lsd
 sudo pacman -S --noconfirm --needed bat
+sudo pacman -S --noconfirm --needed fd-find
 #sudo pacman -S --noconfirm --needed fzf
 
-##### Instalamos zsh #######
+#https://medium.com/tech-notes-and-geek-stuff/install-zsh-on-arch-linux-manjaro-and-make-it-your-default-shell-b0098b756a7a
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sed -i 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
-sh install.sh &>/dev/null &
-sleep 20
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/.oh-my-zsh/themes/powerlevel10k
-sed -i 's/robbyrussell/powerlevel10k\/powerlevel10k/1' .zshrc
-rm -rf .zshrc.tmp
-rm -rf install.sh
+sudo dnf install fd-find
 
-## Instalo fzf:
-git clone --depth 1 https://github.com/junegunn/fzf.git  ~/.fzf
+echo 'export FZF_DEFAULT_COMMAND='fdfind --type f'
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"' > ~/.zshrc
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
+chsh -s /bin/zsh
+
 ~/.fzf/install
-
-rm -rf ~/.fzf.*
-
-cp .zshrc ~/
-cp -r .zsh/ ~/
-
-echo " Cambiar la shell del usuario con: chsh -s /usr/bin/zsh"
-echo " Cambiar la shell de root con: sudo chsh -s /usr/bin/zsh"

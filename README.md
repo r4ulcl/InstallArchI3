@@ -5,24 +5,40 @@ List of files and scripts to install in a fresh arch install, if this have some 
 All for the i3wm enviroment
 
 ## Usage
-Clone the repo: ``` git clone https://github.com/Loop-Man/InstallArchI3 ```
+Clone the repo: ``` git clone https://github.com/RaulCalvoLaorden/InstallArchI3 ```
 
 Change to directory: ``` cd InstallArchI3 ```
 
-Change file permissions: ``` chmod +x i3wmInstall.sh i3wmConfig.sh VMwareTools.sh InstallZSH.sh InstallArchStrike.sh InstallGoTools.sh```
+Launch i3wmInstall, this will download all the necessary packages: ``` ./ArchPhase1.sh ```
 
-Launch bspwmInstall, this will download all the necessary packages: ``` ./i3wmInstall.sh ```
+Then you have to put the disk on which you want to write.
 
-Launch configBspwm, this will finish with the configuration files: ``` ./i3wmConfig.sh ```
+If we want to use the entire disk or free space
+
+Set the LUKS password
+
+Set the root and user passwords
+
+And decide if refind is used (recommended for dual boot)
 
 Reboot and login
 
-Change to directory: ``` cd InstallArchI3 ```
+``` bash
+cd InstallArchi3
 
-Launch InstallArchStrike.sh, this will install ArchStrike repo: ``` ./InstallArchStrike.sh ```
+# To install i3
+bash installi3.sh
 
-Launch InstallGoTools.sh, this will install go tools:  ``` ./InstallGoTools.sh ```
+# install Tools
+bash installTools.sh
 
-Launch vmwaretools, this will install vmwaretools: ``` ./VMwareTools.sh ```
+# install ZSH
+bash installZSH.sh
 
-Launch InstallZSH.sh, this will install InstallZSH.sh: ``` ./InstallZSH.sh ```
+```
+
+or 
+
+``` bash
+bash InstallAll.sh
+```

@@ -11,11 +11,6 @@ pacman -Syu
 #Install Steam
 sudo pacman -S steam
 
-echo 'You can enable Proton in the Steam Client in Steam > Settings > Steam Play'
-echo
-echo 'To force enable Proton, right click on the game, Properties > General > Force the use of a specific Steam Play compatibility tool'
-
-
 # https://github.com/flightlessmango/MangoHud
 yay -Sy --noconfirm --needed mangohud-git 
 yay -Sy --noconfirm --needed lib32-mangohud-git

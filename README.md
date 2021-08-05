@@ -1,8 +1,38 @@
 # InstallArch i3wm
 
-List of files and scripts to install in a fresh arch install, if this have some sense
+List of files and scripts to install in a fresh arch install
 
-All for the i3wm enviroment
+All for the i3 enviroment
+
+## features
+
+### ArchInstaller
+- Arch with LUKS and SWAP file using btrfs
+- EFI
+- Option for full disk or free space
+- Boot loader or refind
+- Dual boot with Windows ready
+
+
+### Tools
+Basic tools to work correctly with Arch
+
+### I3
+I3 graphical interface and requirements
+
+### ZSH
+ZSH Basic Installation
+
+### Hacking tools
+Hacking tools list
+
+### Extra
+
+#### GameArch
+Tools installation to play Arch correctly with AMD GPU
+
+#### ConfigFiles
+Download and set ConfigFiles repository with my basic config file updated. 
 
 ## Usage
 Clone the repo: ``` git clone https://github.com/RaulCalvoLaorden/InstallArchI3 ```

@@ -150,7 +150,14 @@ fi
 
 
 systemctl enable NetworkManager.service
-systemctl enable sshd.service
+
+read -p "Do you want ssh server enabled?  y/N" -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo 'No key file'
+else
+    systemctl enable sshd.service
+fi
 
 exit
 

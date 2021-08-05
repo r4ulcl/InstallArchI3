@@ -71,8 +71,7 @@ fi
 # Encryption
 cryptsetup luksFormat ${DISKLUKS} || exit
 
-# PHASE 2
-
+# Open luks
 cryptsetup open ${DISKLUKS} luks || exit
 
 # File System Creation
@@ -86,23 +85,22 @@ btrfs sub create /mnt/@
 btrfs sub create /mnt/@home
 btrfs sub create /mnt/@pkg
 btrfs sub create /mnt/@snapshots
-#SWAPFILE NOT TESTED https://blog.passcod.name/2020/jun/16/full-disk-encryption-with-btrfs-swap-and-hibernation.html
+# SWAPFILE https://blog.passcod.name/2020/jun/16/full-disk-encryption-with-btrfs-swap-and-hibernation.html
 btrfs sub create /mnt/@swap
 btrfs sub create /mnt/@btrfs
 umount /mnt
 
-
+# Mount all disks in /mnt
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@ /dev/mapper/luks /mnt
 mkdir -p /mnt/{boot,home,var/cache/pacman/pkg,.snapshots,.swapvol,btrfs}
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@home /dev/mapper/luks /mnt/home
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@pkg /dev/mapper/luks /mnt/var/cache/pacman/pkg
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@snapshots /dev/mapper/luks /mnt/.snapshots
-#Swap FILE untested
+# Swap FILE 
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@swap /dev/mapper/luks /.swapvol
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 /dev/mapper/luks /mnt/btrfs
 
-# Mount the EFI partition
-
+# Mount the Boot partition
 mkdir /mnt/boot
 mount ${DISKEFI} /mnt/boot/
 
@@ -110,11 +108,7 @@ mount ${DISKEFI} /mnt/boot/
 #sudo rm -f /var/lib/pacman/sync/*
 pacman -Syyu --noconfirm --needed
 pacstrap /mnt base base-devel linux linux-firmware nano btrfs-progs efibootmgr grub networkmanager openssh git --noconfirm
-
 genfstab -U /mnt >> /mnt/etc/fstab
-
-#Doenload phase 2 in /mnt/root
-
 
 # System Configuration
 cp ./ArchPhase2.sh /mnt/ArchPhase2.sh
@@ -130,7 +124,5 @@ chmod 777 /mnt/home/user/InstallArchI3 -R
 # chroot /chroot_dir /bin/bash -c "su - -c ./startup.sh"
 
 ## Ins script -> download and exec installi3, download and exesute install config
-
-umount -R /mnt
 
 echo reboot

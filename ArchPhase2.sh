@@ -66,7 +66,6 @@ sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/H
 
 
 # Recreate initramfs:
-
 mkinitcpio -p linux
 
 
@@ -77,36 +76,77 @@ bootctl --path=/boot install
 
 UUID=`blkid -s UUID -o value $DISKLUKS` 
 
-echo "title Arch Linux
-linux /vmlinuz-linux
-initrd /intel-ucode.img
-initrd /initramfs-linux.img
-options cryptdevice=UUID=$UUID:luks:allow-discards root=/dev/mapper/luks rootflags=subvol=@ rd.luks.options=discard rw" > /boot/loader/entries/arch.conf
-
-echo 'default  arch.conf
-timeout  4
-console-mode max
-editor   no' >> /boot/loader/loader.conf
-
-read -p "Do you want refind? recommended only usign dual boot y/N" -n 1 -r
+read -p "Do you want refind? recommended usign dual boot y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No refind, just boot loader'
+    echo "title Arch Linux
+    linux /vmlinuz-linux
+    initrd /intel-ucode.img
+    initrd /initramfs-linux.img
+    options cryptdevice=UUID=$UUID:luks:allow-discards root=/dev/mapper/luks rootflags=subvol=@ rd.luks.options=discard rw" > /boot/loader/entries/arch.conf
+
+    echo 'default  arch.conf
+    timeout  4
+    console-mode max
+    editor   no' >> /boot/loader/loader.conf
 else
     # Use refind to Dual Boot with Windows
     #https://wiki.archlinux.org/title/REFInd#Installation_with_refind-install_script
     sudo pacman -S --noconfirm --needed refind
     sudo refind-install
-UUID=`blkid -s UUID -o value /dev/sda2` 
 
     echo '
     "Boot Arch"          "root=/dev/mapper/luks cryptdevice=UUID='$UUID':luks:allow-discards rw rootflags=subvol=@ rd.luks.options=discard"
-    "2Boot to X"          "root=/dev/mapper/luks cryptdevice='$DISKLUKS':cryptroot:allow-discards ro rootfstype=ext4 systemd.unit=graphical.target"
-    "2Boot to console"    "root=/dev/mapper/luks cryptdevice='$DISKLUKS':cryptroot:allow-discards  ro rootfstype=ext4 systemd.unit=multi-user.target"
-    "Boot with standard options"  "root=UUID='$UUID' initrd=/intel-code.img rw"
-' > /boot/refind_linux.conf
+    ' > /boot/refind_linux.conf
+
+    sed -i 's/timeout 20/timeout 5/g' /boot/EFI/refind/refind.conf
+    #sed -i 's/#hideui all/hideui all/g' /boot/EFI/refind/refind.conf #security
+    sed -i 's/#enable_mouse/enable_mouse/g' /boot/EFI/refind/refind.conf
+    #sed -i 's/#default_selection Microsoft/default_selection "LUKS Arch Linux"/g' /boot/EFI/refind/refind.conf
+
+
+    echo '
+    menuentry "LUKS Arch Linux" {
+    icon /EFI/refind/icons/os_arch.png
+    volume '$UUID'
+    # Use the Linux kernel as the EFI loader
+    loader vmlinuz-linux
+    initrd initramfs-linux.img
+    options "root=/dev/mapper/luks cryptdevice=UUID='$UUID':luks:allow-discards rw rootflags=subvol=@ rd.luks.options=discard"
+    submenuentry "Boot using fallback initramfs" {
+            initrd /boot/initramfs-linux-fallback.img
+        }
+        submenuentry "Boot to terminal" {
+            add_options "systemd.unit=multi-user.target"
+        }
+    }
+    ' >> /boot/EFI/refind/refind.conf
+
 fi
 
+#https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media
+echo  "Keyfile embedded in the initramfs (Don't ask for LUKS password on boot) WARNING: USE FULL DISK (/boot) ENCRYPTION"
+echo "For form information: https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media"
+read -p "Do you want key file?  y/N" -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo 'No key file'
+else
+    echo 'key file'
+    dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin iflag=fullblock
+    chmod 600 /crypto_keyfile.bin
+    chmod 600 /boot/initramfs-linux*
+    cryptsetup luksAddKey $DISKLUKS /crypto_keyfile.bin
+    echo 'FILES=(/crypto_keyfile.bin)' >> /etc/mkinitcpio.conf
+
+    # Recreate initramfs:
+    mkinitcpio -p linux
+
+fi
+
+# TODO https://wiki.archlinux.org/title/YubiKey
+# https://github.com/agherzan/yubikey-full-disk-encryption#usage
 systemctl enable NetworkManager.service
 systemctl enable sshd.service
 

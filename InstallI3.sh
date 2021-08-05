@@ -37,6 +37,9 @@ sudo pacman -S noto-fonts ttf-ubuntu-font-family ttf-dejavu ttf-freefont ttf-lib
 # Sound 
 sudo pacman -S alsa-utils alsa-plugins alsa-lib pavucontrol --noconfirm --needed
 
+# xrandr
+sudo pacman -S  --noconfirm --needed xorg-xrandr
+
 #i3 blocks
 sudo pacman -S i3blocks --noconfirm --needed
 git clone https://github.com/vivien/i3blocks-contrib ~/.config/i3blocks
@@ -166,7 +169,6 @@ URxvt*color15: #FFFFFF' > ~/.Xresources
 
 xrdb ~/.Xresources
 
-sudo systemctl enable lightdm && \
-sudo systemctl start lightdm
+sudo systemctl enable lightdm #&& sudo systemctl start lightdm
 
 #startx

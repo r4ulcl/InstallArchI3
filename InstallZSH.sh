@@ -32,7 +32,6 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"' > ~/.zshr
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-
-chsh -s /bin/zsh
+#chsh -s /bin/zsh
 
 ~/.fzf/install

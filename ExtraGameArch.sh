@@ -3,8 +3,7 @@
 #https://www.chrisatmachine.com/Linux/08-steam-on-linux/
 
 #Enable Multilib
-sudo sed -i '/[multilib]/^#//g' /etc/pacman.conf
-sudo sed -i '/Include = \/etc\/pacman.d\/mirrorlist/s/^#//g' /etc/pacman.conf
+sudo sed -z 's/\#\[multilib\]\n#/\[multilib\]\n/' -i /etc/pacman.conf
 
 #Update
 pacman -Syu
@@ -17,10 +16,15 @@ echo
 echo 'To force enable Proton, right click on the game, Properties > General > Force the use of a specific Steam Play compatibility tool'
 
 
-# UNTESTED
 # https://github.com/flightlessmango/MangoHud
 yay -Sy --noconfirm --needed mangohud-git 
 yay -Sy --noconfirm --needed lib32-mangohud-git
+cd /tmp
+wget https://github.com/flightlessmango/MangoHud/releases/download/v0.6.5/MangoHud-0.6.5.r0.ge42002c.tar.gz
+tar -xf MangoHud-0.6.5.r0.ge42002c.tar.gz
+cd MangoHud
+./mangohud-setup.sh install
+
 echo 'mangohud /path/to/app'
 
 # https://tutorialforlinux.com/2020/02/05/how-to-install-radeon-rx-5700-xt-driver-on-arch-gnu-linux/
@@ -33,5 +37,6 @@ else
     yay -Sy vulkan-amdgpu-pro
     yay -Sy opencl-amdgpu-pro-pal
     yay -Sy opencl-amdgpu-pro-orca
+    yay -S rocm-opencl-runtime
     echo "sudo reboot"
 fi

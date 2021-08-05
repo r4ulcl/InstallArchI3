@@ -184,6 +184,7 @@ echo "Installing category System"
 sudo pacman -S --noconfirm --needed accountsservice         # Interfaz para las consultas y manipulación de cuentas de usuario del sistema
 sudo pacman -S --noconfirm --needed git                     # CLI del software de control de versiones
 sudo pacman -S --noconfirm --needed glances                # Herramienta de monitorización del sistema por CLI
+sudo pacman -S --noconfirm --needed ntfs-3g
 sudo pacman -S --noconfirm --needed gparted                 # is a free partition editor for graphically managing your disk partitions
 sudo pacman -S --noconfirm --needed grsync                 # rsync es una herramienta diferencial de copia de seguridad y sincronización de archivos
 sudo pacman -S --noconfirm --needed gvfs                    # es un reemplazo para GNOME VFS, el sistema virtual de archivos de GNOME para detectar dispositivos extraibles.
@@ -311,6 +312,7 @@ sudo pacman -S xfce4-appfinder --noconfirm --needed
 sudo pacman -S xfce4-power-manager --noconfirm --needed
 sudo pacman -S xfce4-settings --noconfirm --needed
 sudo pacman -S xfce4-notifyd --noconfirm --needed
+sudo pacman -S deepin-calculator --noconfirm --needed
 
 echo ""
 
@@ -392,7 +394,7 @@ sudo pacman -S --noconfirm --needed python-pipenv #Instala pipenv para crear ent
 
 sudo pacman -S --noconfirm --needed nextcloud-client  # Nextcloud
 sudo pacman -S --noconfirm --needed nextcloud  # Nextcloud
-
+yay -Sy --noconfirm --needed spotify
 
 ## Instalo xfreerdp
 

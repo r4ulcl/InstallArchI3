@@ -13,9 +13,10 @@ then
     PARTITION_EFI_NUM=`ls -l ${DISK}* | wc -l`
     PARTITION_LUKS_NUM=`echo "$PARTITION_EFI_NUM + 1" | bc `
 
-    parted ${DISK} print free | grep 'Free Space' > /tmp/free # Get partitions list with Free space
+    parted ${DISK} print free | grep 'Free Space' > /tmp/freeRead # Get partitions list with Free space
+    parted ${DISK} unit B print free | grep 'Free Space' > /tmp/free # Get partitions list with Free space
     echo "Choose partition to write, Free Space min 25 GB: (2) TESTING"
-    cat -n /tmp/free
+    cat -n /tmp/freeRead # Readable, with GB, etc
     read PARTITION_NUM   
 
     PARTITION=`sed -n "${PARTITION_NUM}p" < /tmp/free`
@@ -24,39 +25,45 @@ then
     END=`echo $PARTITION | awk '{print $2}'`
 
     NUM_START=`echo $START |  grep '[0-9\.]*' -o`
-    BYTE_START=`echo $START | grep -o '..$'`
-    NUM_END_EFI=`echo "$NUM_START + 0.550" | bc ` #550MB for EFI
-    
-    NUM_END=`echo $END |  grep '[0-9\.]*' -o`
-    BYTE_END=`echo $END | grep -o '..$'`
+    BYTE_EFI=`echo $START | grep -o '.$'`
+    NUM_END_EFI=`echo "$NUM_START + 1048576000" | bc ` #1GB for EFI
+
+    NUM_START_LUKS=`echo "$NUM_END_EFI + 512" | bc ` # +1 sector 512B
+    BYTE_LUKS=`echo $END | grep -o '.$'`
 
     echo 'IT WILL BE EXECUTE:'
-    echo parted --script $DISK mkpart EFI fat32 $START $NUM_END_EFI$BYTE_START set $PARTITION_EFI_NUM esp on mkpart crypt ext4 $NUM_END_EFI$BYTE_START $NUM_END$BYTE_END print
+    echo parted -a optimal --script $DISK mkpart EFI fat32 $START $NUM_END_EFI$BYTE_EFI set $PARTITION_EFI_NUM esp on mkpart crypt ext4 $NUM_START_LUKS$BYTE_LUKS $END print
     read -p "Are you sure? y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         exit
     fi
 
-    parted --script $DISK \
-    mkpart EFI fat32 $START $NUM_END_EFI$BYTE_START \
+    parted -a optimal --script $DISK \
+    mkpart EFI fat32 $START $NUM_END_EFI$BYTE_EFI \
     set $PARTITION_EFI_NUM esp on \
-    mkpart crypt ext4 $NUM_END_EFI$BYTE_START $NUM_END$BYTE_END \
+    mkpart crypt ext4 $NUM_START_LUKS$BYTE_LUKS $END \
     print
+
+    if echo $DISK | grep -q 'nvme' ; then
+        DISK=${DISK}p
+    fi
+
+    echo $DISK
 
     DISKEFI=${DISK}$PARTITION_EFI_NUM
     DISKLUKS=${DISK}$PARTITION_LUKS_NUM
 else
     echo all
     echo 'IT WILL BE EXECUTE:'
-    echo parted --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB 100% print
+    echo parted -a optimal --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB 100% print
     read -p "Are you sure? y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         exit
     fi
     # Partitioning
-    parted --script $DISK \
+    parted -a optimal --script $DISK \
     mklabel gpt \
     mkpart EFI fat32 1MiB 550MiB \
     set 1 esp on \

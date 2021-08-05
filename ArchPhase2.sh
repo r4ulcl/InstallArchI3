@@ -147,6 +147,8 @@ fi
 
 # TODO https://wiki.archlinux.org/title/YubiKey
 # https://github.com/agherzan/yubikey-full-disk-encryption#usage
+
+
 systemctl enable NetworkManager.service
 systemctl enable sshd.service
 

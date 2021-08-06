@@ -15,7 +15,7 @@ then
 
     parted ${DISK} print free | grep 'Free Space' > /tmp/freeRead # Get partitions list with Free space
     parted ${DISK} unit B print free | grep 'Free Space' > /tmp/free # Get partitions list with Free space
-    echo "Choose partition to write, Free Space min 25 GB: (2) TESTING"
+    echo "Choose partition to write, Free Space min 15-35 GB: (2) TESTING"
     cat -n /tmp/freeRead # Readable, with GB, etc
     read PARTITION_NUM   
 
@@ -26,7 +26,7 @@ then
 
     NUM_START=`echo $START |  grep '[0-9\.]*' -o`
     BYTE_EFI=`echo $START | grep -o '.$'`
-    NUM_END_EFI=`echo "$NUM_START + 1048576000" | bc ` #1GB for EFI
+    NUM_END_EFI=`echo "$NUM_START + 1048576000" | bc ` #1GB for EFI, TODO 550 MB
 
     NUM_START_LUKS=`echo "$NUM_END_EFI + 512" | bc ` # +1 sector 512B
     BYTE_LUKS=`echo $END | grep -o '.$'`

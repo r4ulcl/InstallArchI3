@@ -35,3 +35,5 @@ else
     yay -S rocm-opencl-runtime
     echo "sudo reboot"
 fi
+
+pacman -S --noconfirm --needed piper # Game peripherals 

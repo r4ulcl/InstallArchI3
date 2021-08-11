@@ -154,7 +154,7 @@ systemctl enable NetworkManager.service
 read -p "Do you want ssh server enabled?  y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
-    echo 'No key file'
+    echo 'No ssh server'
 else
     systemctl enable sshd.service
 fi

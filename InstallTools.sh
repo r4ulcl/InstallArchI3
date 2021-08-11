@@ -141,6 +141,7 @@ sudo pacman -S --noconfirm --needed flameshot                 # For screenshoots
 
 echo "Installing category Development"
 
+sudo pacman -S --noconfirm --needed vi                          # for git conflicts
 sudo pacman -S --noconfirm --needed vim
 sudo pacman -S --noconfirm --needed neovim
 sudo pacman -S --noconfirm --needed python 
@@ -300,6 +301,7 @@ sudo pacman -S xfce4-terminal --noconfirm --needed
 echo "Installing category System"
 
 sudo pacman -S arandr --noconfirm --needed                      # arandr para la configuración de la resolución de video                     
+sudo pacman -S autorandr --noconfirm --needed                   # autorandr auto randr                     
 sudo pacman -S picom  --noconfirm --needed                      # Para la transparencia de la shell
 sudo pacman -S dmenu  --noconfirm --needed                      # Para ejecutar o lanzar programas
 sudo pacman -S feh --noconfirm --needed                         # feh es un visor de imágenes ligero dirigido principalmente a usuarios de interfaces de línea de comandos

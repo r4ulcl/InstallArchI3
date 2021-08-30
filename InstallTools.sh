@@ -199,11 +199,12 @@ sudo pacman -S --noconfirm --needed net-tools               # Conjunto de herram
 sudo pacman -S --noconfirm --needed numlockx                # numlockx is a program to control the NumLock key inside X11 session scripts
 sudo pacman -S --noconfirm --needed neofetch                # Neofetch muestra información sobre su sistema junto a una imagen.
 sudo pacman -S --noconfirm --needed tmux                    # Tmux es un multiplexador de terminales
-#sudo pacman -S --noconfirm --needed termite                 # Terminal termite para arch. Is a minimal VTE-based terminal emulator. It is a modal application, similar to Vim
+#sudo pacman -S --noconfirm --needed termite                # Terminal termite para arch. Is a minimal VTE-based terminal emulator. It is a modal application, similar to Vim
 sudo pacman -S --noconfirm --needed thunar                  # Thunar es el gestor de archivos lanzado oficialmente con la versión 4.4 de Xfce
 sudo pacman -S --noconfirm --needed caja                    # Caja es un gestor de archivos
 sudo pacman -S --noconfirm --needed thunar-archive-plugin
 sudo pacman -S --noconfirm --needed thunar-volman
+sudo pacman -S --noconfirm --needed engrampa 		    # extract in right click
 sudo pacman -S --noconfirm --needed tumbler                 # is part of the XFCE standard installation
 sudo pacman -S --noconfirm --needed virtualbox-host-modules-arch # Virtualbox es un software de virtualización para arquitecturas x86/amd64
 sudo pacman -S --noconfirm --needed virtualbox              # Virtualbox es un software de virtualización para arquitecturas x86/amd64
@@ -352,6 +353,9 @@ sudo pacman -S tamsyn-font --noconfirm --needed
 sudo pacman -S breeze --noconfirm --needed
 sudo pacman -S otf-hermit --noconfirm --needed          
 sudo pacman -S awesome-terminal-fonts --noconfirm --needed
+sudo pacman -S --noconfirm --needed noto-fonts-emoji 
+sudo pacman -S --noconfirm --needed ttf-joypixels 
+
 
 echo ""
 
@@ -394,9 +398,11 @@ sudo pacman -S --noconfirm --needed python-pipenv #Instala pipenv para crear ent
 # Personal Configuration Raul
 # ----------------
 
-sudo pacman -S --noconfirm --needed nextcloud-client  # Nextcloud
-sudo pacman -S --noconfirm --needed nextcloud  # Nextcloud
-yay -Sy --noconfirm --needed spotify
+sudo pacman -S --noconfirm --needed docker 		# Docker
+sudo pacman -S --noconfirm --needed docker-compose      # Docker-compose
+sudo pacman -S --noconfirm --needed nextcloud-client	# Nextcloud
+sudo pacman -S --noconfirm --needed nextcloud  		# Nextcloud
+yay -Sy --noconfirm --needed spotify			# Spotify
 
 ## Instalo xfreerdp
 
@@ -429,7 +435,9 @@ yay -Sy --noconfirm --needed curl
 yay -Sy --noconfirm --needed dhclient
 yay -Sy --noconfirm --needed dhcpdump
 yay -Sy --noconfirm --needed dmks
-yay -Sy --noconfirm --needed docker
+
+#yay -Sy --noconfirm --needed docker
+#yay -Sy --noconfirm --needed docker-git
 yay -Sy --noconfirm --needed file-roller
 yay -Sy --noconfirm --needed freedesktop
 yay -Sy --noconfirm --needed gnome-keyring 

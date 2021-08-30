@@ -7,13 +7,45 @@ fi
 
 # https://mudrii.medium.com/arch-linux-installation-on-hw-with-i3-windows-manager-part-2-x-window-system-and-i3-installation-86735e55a0a0
 
-#disable Intel Integrated Graphics Controller
-echo "install i915 /bin/false" | sudo tee --append /etc/modprobe.d/blacklist.conf
-cat /etc/modprobe.d/blacklist.conf
-
 # Update
 sudo pacman -Syyuu --noconfirm --needed && \
 yay -Syyuu
+
+
+# Install GPU drivers
+yay -Sy glxinfo
+GPU=`glxinfo|egrep "OpenGL vendor|OpenGL renderer"`
+
+case "${GPU}" in
+  *NVIDIA*|*nvidia*)
+    echo NVIDIA
+    #disable Intel Integrated Graphics Controller
+    echo "install i915 /bin/false" | sudo tee --append /etc/modprobe.d/blacklist.conf
+    cat /etc/modprobe.d/blacklist.conf
+
+    sudo pacman -S nvidia nvidia-utils nvidia-settings --noconfirm --needed
+  ;;
+
+  *amdgpu|*AMD*)
+    echo AMD
+    #disable Intel Integrated Graphics Controller
+    echo "install i915 /bin/false" | sudo tee --append /etc/modprobe.d/blacklist.conf
+    cat /etc/modprobe.d/blacklist.conf
+
+    sudo pacman -S  --noconfirm --needed xf86-video-intel mesa    # AMD
+  ;;
+
+  *Intel*)
+    echo Intel
+    sudo pacman -S  --noconfirm --needed xf86-video-intel    # Intel
+  ;;
+  
+  *)
+    echo IDK
+    exit
+  ;;
+esac
+
 
 # install terminal
 sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
@@ -22,9 +54,8 @@ sudo pacman -S  --noconfirm --needed mate-terminal #backup
 
 # Installing Xorg packages, i3 and video drivers
 #if nvidia
-# sudo pacman -S nvidia nvidia-utils nvidia-settings xorg-server xorg-apps xorg-xinit i3 numlockx --noconfirm --needed
 
-sudo pacman -S  --noconfirm --needed xf86-video-intel mesa    # Intel
+
 sudo pacman -S xorg-server xorg-apps xorg-xinit i3 numlockx --noconfirm --needed
 
 # Display manager

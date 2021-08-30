@@ -4,6 +4,7 @@ fdisk -l | grep dev
 echo "Choose disk to write - WARNING, ALL DISK COULD BE DELETE (/dev/sda)"
 read DISK   
 
+# Check the partitions in the answer, dont count using PARTITION_EFI_NUM
 read -p "Delete all data and use all disk? " -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then

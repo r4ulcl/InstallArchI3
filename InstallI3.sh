@@ -13,7 +13,7 @@ yay -Syyuu
 
 
 # Install GPU drivers
-yay -Sy glxinfo
+yay -Sy --noconfirm --needed  glxinfo
 GPU=`glxinfo|egrep "OpenGL vendor|OpenGL renderer"`
 
 case "${GPU}" in
@@ -42,13 +42,14 @@ case "${GPU}" in
   
   *)
     echo IDK
-    exit
+    sudo pacman -S  --noconfirm --needed xf86-video-intel    # Intel
+
   ;;
 esac
 
 
 # install terminal
-sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
+sudo pacman -S --noconfirm --needed cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon
 sudo pacman -S  --noconfirm --needed alacritty
 sudo pacman -S  --noconfirm --needed mate-terminal #backup
 

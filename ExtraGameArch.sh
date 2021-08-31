@@ -6,10 +6,10 @@
 sudo sed -z 's/\#\[multilib\]\n#/\[multilib\]\n/' -i /etc/pacman.conf
 
 #Update
-pacman -Syu
+pacman -Syu --noconfirm --needed 
 
 #Install Steam
-sudo pacman -S steam
+sudo pacman -S --noconfirm --needed  steam
 
 # https://github.com/flightlessmango/MangoHud
 yay -Sy --noconfirm --needed mangohud-git 

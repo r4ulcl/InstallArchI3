@@ -2,17 +2,22 @@
 
 fdisk -l | grep dev
 echo "Choose disk to write - WARNING, ALL DISK COULD BE DELETE (/dev/sda)"
-read DISK   
+read -i "/dev/sda"  DISK 
+DISK="${DISK:-/dev/sda}"
 
 # Check the partitions in the answer, dont count using PARTITION_EFI_NUM
 read -p "Delete all data and use all disk? " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]
+if [[ ! $REPLY =~ ^[Yy]$ ]] # If not
 then
     echo
     echo 'Use only free space - WARNING, ALL DISK MAY BE DELETED IF ERROR'
 
-    PARTITION_EFI_NUM=`ls -l ${DISK}* | wc -l`
-    PARTITION_LUKS_NUM=`echo "$PARTITION_EFI_NUM + 1" | bc `
+    PARTITION_EFI_NUM=`ls -l ${DISK}* | wc -l` #partition number in disk
+
+    if [[ PARTITION_EFI_NUM -eq 1 ]] ; then # No partition
+        echo "Error, not partitions found in disk. Try another disk or use full disk install"
+        exit 1
+    fi
 
     parted ${DISK} print free | grep 'Free Space' > /tmp/freeRead # Get partitions list with Free space
     parted ${DISK} unit B print free | grep 'Free Space' > /tmp/free # Get partitions list with Free space
@@ -40,11 +45,15 @@ then
         exit
     fi
 
-    parted -a optimal --script $DISK \
+    PARTED=`parted -a optimal --script $DISK \
     mkpart EFI fat32 $START $NUM_END_EFI$BYTE_EFI \
     set $PARTITION_EFI_NUM esp on \
     mkpart crypt ext4 $NUM_START_LUKS$BYTE_LUKS $END \
-    print
+    print`
+
+    echo "$PARTED"
+    ID_EFI=`echo "$PARTED" | grep EFI | tail -1 | awk '{print $1}'`
+    ID_CRYPT=`echo "$PARTED" | grep crypt | tail -1 | awk '{print $1}'`
 
     if echo $DISK | grep -q 'nvme' ; then
         DISK=${DISK}p
@@ -52,12 +61,17 @@ then
 
     echo $DISK
 
-    DISKEFI=${DISK}$PARTITION_EFI_NUM
-    DISKLUKS=${DISK}$PARTITION_LUKS_NUM
+    DISKEFI=${DISK}$ID_EFI
+    DISKLUKS=${DISK}$ID_CRYPT
 else
     echo all
+    echo "Choose de % of the disk to use (default 100)"
+    read PERCENT
+    PENCENT="${PERCENT:100}"
+    DISK   ="${DISK:-/dev/sda}"
+
     echo 'IT WILL BE EXECUTE:'
-    echo parted -a optimal --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB 100% print
+    echo parted -a optimal --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB $PERCENT% print
     read -p "Are you sure? y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
@@ -68,7 +82,7 @@ else
     mklabel gpt \
     mkpart EFI fat32 1MiB 550MiB \
     set 1 esp on \
-    mkpart crypt ext4 550MiB 100% \
+    mkpart crypt ext4 550MiB $PERCENT% \
     print
 
     DISKEFI=${DISK}1

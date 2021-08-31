@@ -316,6 +316,8 @@ sudo pacman -S xfce4-settings --noconfirm --needed
 sudo pacman -S xfce4-notifyd --noconfirm --needed
 sudo pacman -S deepin-calculator --noconfirm --needed
 
+sudo pacman -S --noconfirm --needed linux-headers               # Linux headers
+
 echo ""
 
 # ----------------------

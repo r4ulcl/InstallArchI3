@@ -123,6 +123,18 @@ else
     }
     ' >> /boot/EFI/refind/refind.conf
 
+    #change scanfor manual,external 
+    # scanfor internal
+    read -p "you want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        # NO
+        echo 'scanfor internal' >> /boot/EFI/refind/refind.conf
+    else
+        echo " default unsafe"
+    fi
+    
+
 fi
 
 #https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media

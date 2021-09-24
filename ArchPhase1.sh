@@ -68,7 +68,7 @@ else
     echo "Choose de % of the disk to use (default 100)"
     read PERCENT
     PENCENT="${PERCENT:100}"
-    DISK   ="${DISK:-/dev/sda}"
+    DISK="${DISK:-/dev/sda}"
 
     echo 'IT WILL BE EXECUTE:'
     echo parted -a optimal --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB $PERCENT% print

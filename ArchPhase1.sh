@@ -132,15 +132,26 @@ pacman -Syyu --noconfirm --needed
 pacstrap /mnt base base-devel linux linux-firmware nano btrfs-progs efibootmgr grub networkmanager openssh git --noconfirm
 genfstab -U /mnt >> /mnt/etc/fstab
 
+#Get username 
+echo "Write the username (user)"
+read -i "user"  USERNAME 
+USERNAME="${USERNAME:-user}"
+
+#Get hostname 
+echo "Write the hostname (pc)"
+read -i "pc"  HOSTNAME 
+USERNAME="${HOSTNAME:-pc}"
+
 # System Configuration
 cp ./ArchPhase2.sh /mnt/ArchPhase2.sh
-arch-chroot /mnt/ bash ./ArchPhase2.sh $DISKLUKS || exit 9
+arch-chroot /mnt/ bash ./ArchPhase2.sh $DISKLUKS $USERNAME $HOSTNAME || exit 9
 
 rm /mnt/ArchPhase2.sh
 
-mkdir /mnt/home/user/
-cp ../InstallArchI3 /mnt/home/user/ -r
-chmod 777 /mnt/home/user/InstallArchI3 -R
+
+mkdir /mnt/home/$USERNAME/
+cp ../InstallArchI3 /mnt/home/$USERNAME/ -r
+chmod 777 /mnt/home/$USERNAME/InstallArchI3 -R
 
 # Copy script and execute
 # chroot /chroot_dir /bin/bash -c "su - -c ./startup.sh"

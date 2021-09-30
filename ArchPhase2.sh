@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DISKLUKS=$1
-
+USERNAME=$2
+HOSTNAME=$3
 # PHASE 3
 
 # Swap File untested
@@ -16,7 +17,7 @@ swapon main
 
 echo -e '\n#Swap\n /.swapvol/main swap swap defaults 0 0' >> /etc/fstab
 
-echo pc > /etc/hostname
+echo $HOSTNAME > /etc/hostname
 
 hwclock --systohc --utc
 
@@ -46,9 +47,9 @@ passwd
 
 echo "%wheel ALL=(ALL) ALL" | (EDITOR="tee -a" visudo)
 
-useradd -m -G wheel user
-echo 'Password USER'
-passwd user
+useradd -m -G wheel $USERNAME
+echo 'Password $USERNAME'
+passwd $USERNAME
 
 # PHASE 4
 
@@ -125,7 +126,7 @@ else
 
     #change scanfor manual,external 
     # scanfor internal
-    read -p "you want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
+    read -p "You want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         # NO

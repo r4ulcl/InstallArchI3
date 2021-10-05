@@ -202,6 +202,12 @@ sudo pacman -S --noconfirm --needed tmux                    # Tmux es un multipl
 #sudo pacman -S --noconfirm --needed termite                # Terminal termite para arch. Is a minimal VTE-based terminal emulator. It is a modal application, similar to Vim
 sudo pacman -S --noconfirm --needed thunar                  # Thunar es el gestor de archivos lanzado oficialmente con la versión 4.4 de Xfce
 sudo pacman -S --noconfirm --needed caja                    # Caja es un gestor de archivos
+sudo pacman -S --noconfirm --needed caja-extensions-common
+sudo pacman -S --noconfirm --needed caja-share
+sudo pacman -S --noconfirm --needed caja-open-terminal
+sudo pacman -S --noconfirm --needed caja-sendto
+sudo pacman -S --noconfirm --needed caja-wallpaper
+sudo pacman -S --noconfirm --needed caja-xattr-tags
 sudo pacman -S --noconfirm --needed thunar-archive-plugin
 sudo pacman -S --noconfirm --needed thunar-volman
 sudo pacman -S --noconfirm --needed engrampa 		    # extract in right click

@@ -115,11 +115,8 @@ else
     loader vmlinuz-linux
     initrd initramfs-linux.img
     options "root=/dev/mapper/luks cryptdevice=UUID='$UUID':luks:allow-discards rw rootflags=subvol=@ rd.luks.options=discard"
-    submenuentry "Boot using fallback initramfs" {
-            initrd /boot/initramfs-linux-fallback.img
-        }
-        submenuentry "Boot to terminal" {
-            add_options "systemd.unit=multi-user.target"
+        submenuentry "Boot to terminal (Rescue mode)" {
+            add_options "init=/bin/bash"
         }
     }
     ' >> /boot/EFI/refind/refind.conf

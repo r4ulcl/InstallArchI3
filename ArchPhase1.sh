@@ -6,7 +6,8 @@ read -i "/dev/sda"  DISK
 DISK="${DISK:-/dev/sda}"
 
 # Check the partitions in the answer, dont count using PARTITION_EFI_NUM
-read -p "Delete all data and use all disk? " -n 1 -r
+read -p "Delete all data and use all disk? y/N " -n 1 -r
+echo 
 if [[ ! $REPLY =~ ^[Yy]$ ]] # If not
 then
     echo
@@ -67,8 +68,7 @@ else
     echo all
     echo "Choose de % of the disk to use (default 100)"
     read PERCENT
-    PENCENT="${PERCENT:100}"
-    DISK="${DISK:-/dev/sda}"
+    PERCENT="${PERCENT:-100}"
 
     echo 'IT WILL BE EXECUTE:'
     echo parted -a optimal --script $DISK mklabel gpt mkpart EFI fat32 1MiB 550MiB set 1 esp on mkpart crypt ext4 550MiB $PERCENT% print
@@ -89,12 +89,34 @@ else
     DISKLUKS=${DISK}2
 fi
 
-
 # Encryption
 cryptsetup luksFormat ${DISKLUKS} || exit
 
 # Open luks
 cryptsetup open ${DISKLUKS} luks || exit
+
+echo "AFTER THIS, ALL QUESTIONS WILL BE SET TO THE DEFAULT OPTION AFTER 30 SECONDS"
+
+#Get username 
+read -p "Write the username (default: user)  " -r -t 30 
+USERNAME="${REPLY:-user}"
+echo $USERNAME
+
+#Get hostname 
+read -p "Write the hostname (default: pc)  " -r -t 30 
+HOSTNAME="${REPLY:-pc}"
+echo $HOSTNAME
+
+#ASK PASSWORDS
+read -s -p "Write the user $USERNAME password (default: toor)  " -r -t 30 
+USERPASS="${REPLY:-toor}"
+echo 
+
+read -s -p "Write the root password (default: toor)  " -r -t 30 
+ROOTPASS="${REPLY:-toor}"
+echo
+
+
 
 # File System Creation
 mkfs.vfat -F32 -n EFI ${DISKEFI}
@@ -127,24 +149,15 @@ mkdir /mnt/boot
 mount ${DISKEFI} /mnt/boot/
 
 # Base System and /etc/fstab
-#sudo rm -f /var/lib/pacman/sync/*
+sudo rm -f /var/lib/pacman/sync/*
 pacman -Syyu --noconfirm --needed
 pacstrap /mnt base base-devel linux linux-firmware nano btrfs-progs efibootmgr grub networkmanager openssh git --noconfirm
 genfstab -U /mnt >> /mnt/etc/fstab
 
-#Get username 
-echo "Write the username (user)"
-read -i "user"  USERNAME 
-USERNAME="${USERNAME:-user}"
-
-#Get hostname 
-echo "Write the hostname (pc)"
-read -i "pc"  HOSTNAME 
-USERNAME="${HOSTNAME:-pc}"
 
 # System Configuration
 cp ./ArchPhase2.sh /mnt/ArchPhase2.sh
-arch-chroot /mnt/ bash ./ArchPhase2.sh $DISKLUKS $USERNAME $HOSTNAME || exit 9
+arch-chroot /mnt/ bash ./ArchPhase2.sh $DISKLUKS $USERNAME $HOSTNAME $USERPASS $ROOTPASS|| exit 9
 
 rm /mnt/ArchPhase2.sh
 

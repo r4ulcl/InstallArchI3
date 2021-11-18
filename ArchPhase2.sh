@@ -3,6 +3,8 @@
 DISKLUKS=$1
 USERNAME=$2
 HOSTNAME=$3
+USERPASS=$4
+ROOTPASS=$5
 # PHASE 3
 
 # Swap File untested
@@ -41,15 +43,18 @@ echo '127.0.0.1 localhost
 127.0.1.1       pc.localdomain  pc' > /etc/hosts
 
 echo 'Password root'
-passwd
+#passwd
+echo -e "$ROOTPASS\n$ROOTPASS" | (passwd root)
 
 
 
 echo "%wheel ALL=(ALL) ALL" | (EDITOR="tee -a" visudo)
 
 useradd -m -G wheel $USERNAME
-echo 'Password $USERNAME'
-passwd $USERNAME
+echo "Password $USERNAME"
+#passwd $USERNAME
+echo -e "$USERPASS\n$USERPASS" | (passwd $USERNAME)
+
 
 # PHASE 4
 
@@ -77,7 +82,7 @@ bootctl --path=/boot install
 
 UUID=`blkid -s UUID -o value $DISKLUKS` 
 
-read -p "Do you want refind? recommended usign dual boot y/N" -n 1 -r
+read -t 30 -p  "Do you want refind? recommended usign dual boot y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No refind, just boot loader'
@@ -123,7 +128,7 @@ else
 
     #change scanfor manual,external 
     # scanfor internal
-    read -p "You want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
+    read -t 30 -p "You want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         # NO
@@ -138,7 +143,7 @@ fi
 #https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media
 echo  "Keyfile embedded in the initramfs (Don't ask for LUKS password on boot) WARNING: USE FULL DISK (/boot) ENCRYPTION"
 echo "For form information: https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media"
-read -p "Do you want key file?  y/N" -n 1 -r
+read -t 30 -p "Do you want key file?  y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No key file'
@@ -161,7 +166,7 @@ fi
 
 systemctl enable NetworkManager.service
 
-read -p "Do you want ssh server enabled?  y/N" -n 1 -r
+read -t 30 -p "Do you want ssh server enabled?  y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No ssh server'

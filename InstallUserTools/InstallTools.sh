@@ -22,6 +22,10 @@ echo ""
 
 sudo pacman -Syu --noconfirm --needed
 
+pacman -Sy archlinux-keyring
+
+pacman -Syu
+
 # -------------------
 # Sound
 # -------------------

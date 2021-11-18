@@ -20,7 +20,7 @@ fi
 
 echo ""
 
-sudo pip3 install cve_searchsploit                             # Instalamos searchsploit_cve
+pip3 install cve_searchsploit                             # Instalamos searchsploit_cve
 
 sudo pacman -S --noconfirm --needed tor 
 sudo pacman -S --noconfirm --needed torsocks
@@ -148,10 +148,13 @@ yay -Sy --noconfirm --needed nessus
 yay -Sy --noconfirm --needed r1133.d160214
 yay -Sy --noconfirm --needed responder
 yay -Sy --noconfirm --needed rpcclient smbclient
+yay -Sy --noconfirm --needed sslstrip mdk4 crunch pixiewps python2-crypto --overwrite
+yay -Sy --noconfirm --needed wafw00f
+
+# WiFI
+sudo pacman -S bc dkms git base-devel pamac-cli --noconfirm --needed 
 yay -Sy --noconfirm --needed rtl8812au
 yay -Sy --noconfirm --needed rtl8812au-dkms-git
 yay -Sy --noconfirm --needed rtl8814au
 yay -Sy --noconfirm --needed rtl8814au-dkms-git 
 yay -Sy --noconfirm --needed rtl88xxau-aircrack-dkms-git
-yay -Sy --noconfirm --needed sslstrip mdk4 crunch pixiewps python2-crypto --overwrite
-yay -Sy --noconfirm --needed wafw00f

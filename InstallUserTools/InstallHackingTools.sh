@@ -20,6 +20,8 @@ fi
 
 echo ""
 
+sudo pacman -S --noconfirm --needed python-pip 
+
 pip3 install cve_searchsploit                             # Instalamos searchsploit_cve
 
 sudo pacman -S --noconfirm --needed tor 

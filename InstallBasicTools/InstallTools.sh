@@ -22,9 +22,9 @@ echo ""
 
 sudo pacman -Syu --noconfirm --needed
 
-pacman -Sy archlinux-keyring
+sudo pacman -Syu --noconfirm --needed archlinux-keyring
 
-pacman -Syu
+sudo pacman -Syu
 
 # -------------------
 # Sound
@@ -243,6 +243,7 @@ sudo pacman -S --noconfirm --needed calcurse                # calcurse is a cale
 sudo pacman -S --noconfirm --needed sysstat                 # sysstat es una colección de herramientas de monitoreo de rendimiento para Linux
 sudo pacman -S --noconfirm --needed task                    # Gestor de tareas
 sudo pacman -S --noconfirm --needed keepassxc               # Gestor de contraseñas
+sudo pacman -S --noconfirm --needed  linux-headers
 
 ###############################################################################################
 
@@ -413,7 +414,9 @@ sudo pacman -S --noconfirm --needed python-pipenv #Instala pipenv para crear ent
 sudo pacman -S --noconfirm --needed docker 		# Docker
 sudo pacman -S --noconfirm --needed docker-compose      # Docker-compose
 sudo pacman -S --noconfirm --needed nextcloud-client	# Nextcloud
-sudo pacman -S --noconfirm --needed nextcloud  		# Nextcloud
+sudo pacman -S --noconfirm --needed seahorse            # GNOME application for managing PGP keys.
+sudo pacman -S --noconfirm --needed gnome-keyring
+sudo pacman -S --noconfirm --needed mate-system-monitor # System monitor
 yay -Sy --noconfirm --needed spotify			# Spotify
 
 ## Instalo xfreerdp

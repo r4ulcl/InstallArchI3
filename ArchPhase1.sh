@@ -162,8 +162,8 @@ arch-chroot /mnt/ bash ./ArchPhase2.sh $DISKLUKS $USERNAME $HOSTNAME $USERPASS $
 rm /mnt/ArchPhase2.sh
 
 
-mkdir /mnt/home/$USERNAME/
-cp ../InstallArchI3 /mnt/home/$USERNAME/ -r
+mkdir -p /mnt/home/$USERNAME/github/
+cp ../InstallArchI3 /mnt/home/$USERNAME/github/ -r
 chmod 777 /mnt/home/$USERNAME/InstallArchI3 -R
 
 # Copy script and execute

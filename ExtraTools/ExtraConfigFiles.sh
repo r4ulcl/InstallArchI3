@@ -9,3 +9,4 @@ cd configFiles
 
 # Exec script to create de symbolic files
 bash sym.sh
+

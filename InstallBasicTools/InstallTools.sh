@@ -276,12 +276,11 @@ echo "Installing category System"
 yay -S --noconfirm --needed downgrade                                   # Script de bash para degradar uno o más paquetes a una versión en su caché o en A.L.A.
 yay -S --noconfirm --needed font-manager-git                            # FUENTE
 yay -S --noconfirm --needed inxi                                        # Esta es una herramienta de información del equipo para la línea de comandos
-yay -S --noconfirm --needed oxy-neon                                    # Es un tema para crear un escritorio oscuro
 yay -S --noconfirm --needed pamac-aur                                   # PAMAC es una excelente GUI de los chicos de Manjaro para manejar el gestor de paquetes pacman
 yay -S --noconfirm --needed sardi-icons                                 # Conjunto de iconos
-yay -S --noconfirm --needed sardi-orb-colora-variations-icons-git       # Conjunto de iconos
+#yay -S --noconfirm --needed sardi-orb-colora-variations-icons-git       # Conjunto de iconos
 yay -S --noconfirm --needed surfn-icons-git                             # Conjunto de iconos
-yay -S --noconfirm --needed the_platinum_searcher-bin                   #  A code search tool similar to ack
+#yay -S --noconfirm --needed the_platinum_searcher-bin                   #  A code search tool similar to ack
 yay -S --noconfirm --needed ttf-font-awesome                            # FUENTE
 yay -S --noconfirm --needed ttf-mac-fonts                               # FUENTE
 yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
@@ -441,14 +440,14 @@ echo "Copying wallpapers"
 
 yay -Sy --noconfirm --needed acpi
 yay -Sy --noconfirm --needed caja
-yay -Sy --noconfirm --needed caja-deja-dup-bzr
+#yay -Sy --noconfirm --needed caja-deja-dup-bzr
 yay -Sy --noconfirm --needed caja-extensions-common
 yay -Sy --noconfirm --needed caja-open-terminal
 yay -Sy --noconfirm --needed caja-share 
 yay -Sy --noconfirm --needed cbatticon
 yay -Sy --noconfirm --needed curl
 yay -Sy --noconfirm --needed dhclient
-yay -Sy --noconfirm --needed dhcpdump
+#yay -Sy --noconfirm --needed dhcpdump
 yay -Sy --noconfirm --needed dmks
 
 #yay -Sy --noconfirm --needed docker
@@ -489,7 +488,7 @@ yay -Sy --noconfirm --needed smbclient
 yay -Sy --noconfirm --needed sqlitebrowser
 yay -Sy --noconfirm --needed swig
 yay -Sy --noconfirm --needed system-monitor
-yay -Sy --noconfirm --needed teams
+#yay -Sy --noconfirm --needed teams
 yay -Sy --noconfirm --needed vainfo
 yay -Sy --noconfirm --needed x11-ssh-askpass
 yay -Sy --noconfirm --needed xterm scrot jq

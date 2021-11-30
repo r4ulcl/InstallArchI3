@@ -82,9 +82,10 @@ bootctl --path=/boot install
 
 UUID=`blkid -s UUID -o value $DISKLUKS` 
 
-read -t 30 -p  "Do you want refind? recommended usign dual boot y/N" -n 1 -r
+read -t 90 -p  "Do you want refind? recommended usign dual boot y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
+    echo
     echo 'No refind, just boot loader'
     echo "title Arch Linux
     linux /vmlinuz-linux
@@ -128,7 +129,7 @@ else
 
     #change scanfor manual,external 
     # scanfor internal
-    read -t 30 -p "You want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
+    read -t 90 -p "You want refind to scan external usb to boot from there (unsafe, like F12) y/N" -n 1 -r
     if [[ ! $REPLY =~ ^[Yy]$ ]]
     then
         # NO
@@ -142,8 +143,8 @@ fi
 
 #https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media
 echo  "Keyfile embedded in the initramfs (Don't ask for LUKS password on boot) WARNING: USE FULL DISK (/boot) ENCRYPTION"
-echo "For form information: https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media"
-read -t 30 -p "Do you want key file?  y/N" -n 1 -r
+echo "For more information: https://wiki.archlinux.org/title/Dm-crypt/Device_encryption#With_a_keyfile_stored_on_an_external_media"
+read -t 90 -p "Do you want key file?  y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No key file'
@@ -166,7 +167,7 @@ fi
 
 systemctl enable NetworkManager.service
 
-read -t 30 -p "Do you want ssh server enabled?  y/N" -n 1 -r
+read -t 90 -p "Do you want ssh server enabled?  y/N" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
     echo 'No ssh server'

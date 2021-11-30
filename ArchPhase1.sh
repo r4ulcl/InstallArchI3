@@ -164,7 +164,7 @@ rm /mnt/ArchPhase2.sh
 
 mkdir -p /mnt/home/$USERNAME/github/
 cp ../InstallArchI3 /mnt/home/$USERNAME/github/ -r
-chmod 777 /mnt/home/$USERNAME/InstallArchI3 -R
+chmod 777 /mnt/home/$USERNAME/github/InstallArchI3 -R
 
 # Copy script and execute
 # chroot /chroot_dir /bin/bash -c "su - -c ./startup.sh"

@@ -1,8 +1,15 @@
-# InstallArch i3wm
+# InstallArch i3
 
 List of files and scripts to install in a fresh arch install, if this have some sense
 
-All for the i3wm enviroment
+All for the i3 enviroment
+
+## Features
+- AutoInstall
+- I3
+- EFI
+- Luks
+- Refind or boot loader
 
 ## Usage
 - Clone the repo: ``` git clone https://github.com/RaulCalvoLaorden/InstallArchI3 ```
@@ -26,19 +33,16 @@ All for the i3wm enviroment
 ``` bash
 cd InstallArchi3
 
-# To install i3
-bash installi3.sh
+# To install basic tools and I3
+bash InstallBasicTools.sh
 
-# install Tools
-bash installTools.sh
+# Install other extra info
+cd ExtraTools
 
-# install ZSH
-bash installZSH.sh
+# Wallpapers
+bash ExtraWallpapers.sh
+# Hacking tools
+bash ExtraHackingTools.sh
 
-```
 
-or 
-
-``` bash
-bash InstallAll.sh
 ```

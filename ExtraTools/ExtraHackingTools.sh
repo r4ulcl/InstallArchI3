@@ -38,7 +38,16 @@ echo "Installing Tools for Pentesting"
 
 # Pacman repo
 sudo pacman -S --noconfirm --needed nmap
-sudo pacman -S --noconfirm --needed aircrack-ng
+#----------Aircrack-ng-------------
+#sudo pacman -S --noconfirm --needed aircrack-ng
+git clone https://github.com/aircrack-ng/aircrack-ng
+cd aircrack-ng
+autoreconf -i
+./configure --with-experimental
+make
+sudo make install
+sudo ldconfig
+#----------Aircrack-ng-------------
 sudo pacman -S --noconfirm --needed usbutils
 sudo pacman -S --noconfirm --needed bettercap
 sudo pacman -S --noconfirm --needed inetutils

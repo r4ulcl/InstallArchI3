@@ -135,13 +135,13 @@ btrfs sub create /mnt/@btrfs
 umount /mnt
 
 # Mount all disks in /mnt
-mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@ /dev/mapper/luks /mnt
+mount -o noatime,nodiratime,compress=zstd,ssd,space_cache=v2,subvol=@ /dev/mapper/luks /mnt
 mkdir -p /mnt/{boot,home,var/cache/pacman/pkg,.snapshots,.swapvol,btrfs}
-mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@home /dev/mapper/luks /mnt/home
-mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@pkg /dev/mapper/luks /mnt/var/cache/pacman/pkg
-mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@snapshots /dev/mapper/luks /mnt/.snapshots
+mount -o noatime,nodiratime,compress=zstd,ssd,space_cache=v2,subvol=@home /dev/mapper/luks /mnt/home
+mount -o noatime,nodiratime,compress=zstd,ssd,space_cache=v2,subvol=@pkg /dev/mapper/luks /mnt/var/cache/pacman/pkg
+mount -o noatime,nodiratime,compress=zstd,ssd,space_cache=v2,subvol=@snapshots /dev/mapper/luks /mnt/.snapshots
 # Swap FILE 
-mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvol=@swap /dev/mapper/luks /.swapvol
+mount -o noatime,nodiratime,compress=zstd,ssd,space_cache=v2,subvol=@swap /dev/mapper/luks /.swapvol
 mount -o noatime,nodiratime,compress=zstd,space_cache,ssd,subvolid=5 /dev/mapper/luks /mnt/btrfs
 
 # Mount the Boot partition

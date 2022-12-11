@@ -68,8 +68,9 @@ pacman -S --noconfirm --needed intel-ucode
 ##HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
 ##HOOKS="base keyboard udev autodetect modconf block keymap encrypt btrfs filesystems"
 
-sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS="base keyboard udev autodetect modconf block keymap encrypt btrfs filesystems"/g' /etc/mkinitcpio.conf
+# OLD sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS="base keyboard udev keyboard encrypt keymap autodetect modconf block keymap encrypt btrfs filesystems"/g' /etc/mkinitcpio.conf
 
+sed -i 's/HOOKS=(base/HOOKS=(base keyboard keymap encrypt/g' /etc/mkinitcpio.conf
 
 # Recreate initramfs:
 mkinitcpio -p linux
@@ -105,6 +106,7 @@ else
 
     echo '
     "Boot Arch"          "root=/dev/mapper/luks cryptdevice=UUID='$UUID':luks:allow-discards rw rootflags=subvol=@ rd.luks.options=discard"
+    
     ' > /boot/refind_linux.conf
 
     sed -i 's/timeout 20/timeout 5/g' /boot/EFI/refind/refind.conf

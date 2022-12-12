@@ -70,10 +70,14 @@ pacman -S --noconfirm --needed intel-ucode
 
 # OLD sed -i 's/HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)/HOOKS="base keyboard udev keyboard encrypt keymap autodetect modconf block keymap encrypt btrfs filesystems"/g' /etc/mkinitcpio.conf
 
-sed -i 's/HOOKS=(base/HOOKS=(base keyboard keymap encrypt/g' /etc/mkinitcpio.conf
+sed -i 's/HOOKS=(base/#HOOKS=(base keyboard keymap encrypt/g' /etc/mkinitcpio.conf
+
+echo 'HOOKS=(base udev autodetect modconf kms keyboard keymap consolefont block encrypt filesystems fsck)' >> /etc/mkinitcpio.conf
+
 
 # Recreate initramfs:
 mkinitcpio -p linux
+mkinitcpio -p linux -P
 
 
 

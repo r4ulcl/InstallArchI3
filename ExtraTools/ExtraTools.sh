@@ -17,8 +17,9 @@ yay -Sy --noconfirm --needed dhclient
 #yay -Sy --noconfirm --needed freedesktop
 yay -Sy --noconfirm --needed gnome-keyring 
 #yay -Sy --noconfirm --needed java
-yay -Sy --noconfirm --needed libgsf # Dependence for joplin
-yay -Sy --noconfirm --needed joplin
+#yay -Sy --noconfirm --needed libgsf # Dependence for joplin
+#yay -Sy --noconfirm --needed joplin
+yay -Sy --noconfirm --needed obsidian
 yay -Sy --noconfirm --needed keepassxc
 yay -Sy --noconfirm --needed libnotify
 yay -Sy --noconfirm --needed libnotify-cil

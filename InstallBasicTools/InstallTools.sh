@@ -151,7 +151,7 @@ sudo pacman -S --noconfirm --needed neovim
 sudo pacman -S --noconfirm --needed python 
 sudo pacman -S --noconfirm --needed python-pip 
 sudo pip install -U pip                                        # Actualizar pip3
-sudo pacman -S --noconfirm --needed python2
+#NOT FOUND sudo pacman -S --noconfirm --needed python2
 #sudo pacman -S --noconfirm --needed python2-pip
 #sudo pip2 install -U pip                                       # Actualizar pip2
 
@@ -274,7 +274,7 @@ then
 echo "Installing category System"
 
 yay -S --noconfirm --needed downgrade                                   # Script de bash para degradar uno o más paquetes a una versión en su caché o en A.L.A.
-yay -S --noconfirm --needed font-manager-git                            # FUENTE
+# ERROR yay -S --noconfirm --needed font-manager-git                            # FUENTE
 yay -S --noconfirm --needed inxi                                        # Esta es una herramienta de información del equipo para la línea de comandos
 yay -S --noconfirm --needed pamac-aur                                   # PAMAC es una excelente GUI de los chicos de Manjaro para manejar el gestor de paquetes pacman
 yay -S --noconfirm --needed sardi-icons                                 # Conjunto de iconos
@@ -283,7 +283,7 @@ yay -S --noconfirm --needed surfn-icons-git                             # Conjun
 #yay -S --noconfirm --needed the_platinum_searcher-bin                   #  A code search tool similar to ack
 yay -S --noconfirm --needed ttf-font-awesome                            # FUENTE
 yay -S --noconfirm --needed ttf-mac-fonts                               # FUENTE
-yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
+# ERROR yay -S --noconfirm --needed nerd-fonts-hack                             # FUENTE
 #yay -S --noconfirm --needed brave-nightly-bin                          # Navegador web brave
 yay -S --noconfirm --needed brave-bin
 #yay -S --noconfirm --needed gksu                                        # Permite iniciar aplicaciones gráficas desde consola con otro usuario pidiendo sus datos.
@@ -416,7 +416,7 @@ sudo pacman -S --noconfirm --needed nextcloud-client	# Nextcloud
 sudo pacman -S --noconfirm --needed seahorse            # GNOME application for managing PGP keys.
 sudo pacman -S --noconfirm --needed gnome-keyring
 sudo pacman -S --noconfirm --needed mate-system-monitor # System monitor
-yay -Sy --noconfirm --needed spotify			# Spotify
+# ERROR yay -Sy --noconfirm --needed spotify			# Spotify
 
 ## Instalo xfreerdp
 

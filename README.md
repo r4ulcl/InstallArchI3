@@ -9,10 +9,21 @@ All for the i3 enviroment
 - I3
 - EFI
 - Luks
+- BTRFS
 - Refind or boot loader
 
 ## Usage
-- Clone the repo: ``` git clone https://github.com/RaulCalvoLaorden/InstallArchI3 ```
+- Load the arch ISO from USB or in the VM. 
+
+- Set root password to access using SSH ``` passwd ```
+
+- Start sshd ``` systemctl start sshd```
+
+- Access using SSH from other computer to copy paste easy. ``` ssh root@$IP ```
+
+- Install git ``` pacman -Sy git ```
+
+- Clone the repo: ``` git clone https://github.com/r4ulcl/InstallArchI3 ```
 
 - Change to directory: ``` cd InstallArchI3 ```
 
@@ -31,6 +42,12 @@ All for the i3 enviroment
 - Reboot and login
 
 ``` bash
+# Install git
+pacman -Sy git
+
+# Download Repo
+git clone https://github.com/r4ulcl/InstallArchI3
+
 cd InstallArchi3
 
 # To install basic tools and I3

@@ -45,13 +45,21 @@ All for the i3 enviroment
 - Reboot and login ``` reboot ```
 
 
-### Install GUI I3
+### Options to continue
+
+#### Install GUI I3 only
 
 - After restart login using your user
 - Access to github/InstallARchI3 ``` cd github/InstallARchI3 ```
+- Execute install InstallI3 ``` bash InstallBasicTools/InstallI3.sh ```
+
+
+#### Install GUI I3 and other basic tools
+
+- Access to github/InstallARchI3 ``` cd github/InstallARchI3 ```
 - Execute install basic tools ``` bash InstallBasicTools.sh ```
 
-### Install other extra tools
+#### Install other extra tools
 
 ```
 cd ExtraTools

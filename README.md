@@ -13,6 +13,9 @@ All for the i3 enviroment
 - Refind or boot loader
 
 ## Usage
+
+### Install basic Arch
+
 - Load the arch ISO from USB or in the VM. 
 
 - Set root password to access using SSH ``` passwd ```
@@ -39,21 +42,18 @@ All for the i3 enviroment
 
 - And decide if refind is used (recommended for dual boot)
 
-- Reboot and login
+- Reboot and login ``` reboot ```
 
-``` bash
-# Install git
-pacman -Sy git
 
-# Download Repo
-git clone https://github.com/r4ulcl/InstallArchI3
+### Install GUI I3
 
-cd InstallArchi3
+- After restart login using your user
+- Access to github/InstallARchI3 ``` cd github/InstallARchI3 ```
+- Execute install basic tools ``` bash InstallBasicTools.sh ```
 
-# To install basic tools and I3
-bash InstallBasicTools.sh
+### Install other extra tools
 
-# Install other extra info
+```
 cd ExtraTools
 
 # Wallpapers

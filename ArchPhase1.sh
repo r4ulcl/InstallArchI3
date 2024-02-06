@@ -171,4 +171,4 @@ chmod 777 /mnt/home/$USERNAME/github/InstallArchI3 -R
 
 ## Ins script -> download and exec installi3, download and exesute install config
 
-echo reboot
+ echo -e "\n\nYou can reboot now"

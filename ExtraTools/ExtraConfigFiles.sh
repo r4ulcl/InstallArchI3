@@ -4,7 +4,7 @@ mkdir ~/github
 cd ~/github
 
 # Download repo
-git clone https://github.com/RaulCalvoLaorden/configFiles
+git clone https://github.com/r4ulcl/configFiles
 cd configFiles
 
 # Exec script to create de symbolic files
